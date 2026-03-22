@@ -246,7 +246,7 @@
         }
     </style>
 
-    <!-- JSON-LD Schema.org -->
+    <!-- JSON-LD Schema.org — Agent-Ready V2 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -260,31 +260,108 @@
           "areaServed": [
             { "@type": "Country", "name": "Suisse" },
             { "@type": "AdministrativeArea", "name": "Suisse romande" },
-            { "@type": "City", "name": "Genève" }
+            { "@type": "City", "name": "Genève" },
+            { "@type": "City", "name": "Lausanne" },
+            { "@type": "City", "name": "Nyon" }
           ],
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Genève",
             "addressRegion": "GE",
+            "postalCode": "1200",
             "addressCountry": "CH"
           },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "46.2044",
+            "longitude": "6.1432"
+          },
+          "telephone": "+41-22-000-00-00",
+          "email": "contact@suisse-fiduciaire.com",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          ],
+          "priceRange": "$$-$$$",
+          "currenciesAccepted": "CHF, EUR",
+          "paymentAccepted": "Virement bancaire, carte de crédit",
+          "knowsLanguage": ["fr", "en", "de"],
           "knowsAbout": [
             "Fiduciaire suisse", "Swiss fiduciary",
             "Comptabilité PME", "Audit financier",
             "Optimisation fiscale suisse", "Swiss tax optimization",
             "Conformité FINMA", "Gestion comptable",
-            "Conseil fiscal Suisse romande"
+            "Conseil fiscal Suisse romande",
+            "Création société Genève", "Fiscalité frontaliers"
           ],
           "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "Services fiduciaires",
             "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestion comptable et révision" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conseil fiscal et optimisation" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Audit et conformité réglementaire" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Création et structuration d'entreprise" } }
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Gestion comptable et révision",
+                  "description": "Tenue de comptabilité, comptes annuels, gestion TVA, reporting financier conforme au Code des obligations suisse."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Conseil fiscal et optimisation",
+                  "description": "Planification fiscale cantonale et fédérale, déclarations d'impôts, rulings fiscaux, optimisation charge fiscale."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Audit et conformité réglementaire",
+                  "description": "Contrôle restreint et ordinaire, audit LBA, vérification processus internes, accompagnement contrôles fiscaux."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Création et structuration d'entreprise",
+                  "description": "Constitution Sàrl et SA, rédaction statuts, domiciliation, inscription registre du commerce, affiliation AVS."
+                }
+              }
             ]
           },
+          "potentialAction": [
+            {
+              "@type": "ReserveAction",
+              "name": "Prendre rendez-vous",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.suisse-fiduciaire.com/#contact",
+                "actionPlatform": [
+                  "http://schema.org/DesktopWebPlatform",
+                  "http://schema.org/MobileWebPlatform"
+                ]
+              },
+              "result": {
+                "@type": "Reservation",
+                "name": "Consultation initiale"
+              }
+            },
+            {
+              "@type": "CommunicateAction",
+              "name": "Contacter par email",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "mailto:contact@suisse-fiduciaire.com"
+              }
+            }
+          ],
           "sameAs": []
         },
         {
