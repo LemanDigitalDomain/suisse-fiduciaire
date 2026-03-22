@@ -244,6 +244,179 @@
             .nav-links { gap: 15px; }
             .nav-links a { font-size: 0.75rem; }
         }
+
+        /* CHAT WIDGET */
+        #chat-bubble {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, background 0.3s;
+        }
+        #chat-bubble:hover {
+            transform: scale(1.1);
+            background: var(--gold-light);
+        }
+        #chat-bubble svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--navy);
+        }
+        #chat-window {
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            width: 380px;
+            height: 520px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+            z-index: 9998;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+        #chat-window.open {
+            display: flex;
+        }
+        #chat-header {
+            background: var(--navy);
+            color: var(--white);
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        #chat-header-dot {
+            width: 10px;
+            height: 10px;
+            background: #4CAF50;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        #chat-header-text {
+            flex: 1;
+        }
+        #chat-header-text h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+        }
+        #chat-header-text p {
+            font-size: 0.75rem;
+            color: var(--silver);
+            margin: 2px 0 0;
+        }
+        #chat-close {
+            background: none;
+            border: none;
+            color: var(--silver);
+            font-size: 1.4rem;
+            cursor: pointer;
+            padding: 0 5px;
+            line-height: 1;
+        }
+        #chat-close:hover { color: var(--white); }
+        #chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: #f9f8f6;
+        }
+        .chat-msg {
+            max-width: 85%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+        .chat-msg.bot {
+            background: var(--white);
+            color: var(--text);
+            align-self: flex-start;
+            border: 1px solid #e8e6e1;
+            border-bottom-left-radius: 4px;
+        }
+        .chat-msg.user {
+            background: var(--navy);
+            color: var(--white);
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+        .chat-msg.typing {
+            background: var(--white);
+            border: 1px solid #e8e6e1;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+            color: var(--silver);
+            font-style: italic;
+        }
+        #chat-input-area {
+            display: flex;
+            padding: 12px;
+            gap: 8px;
+            border-top: 1px solid #e8e6e1;
+            background: var(--white);
+        }
+        #chat-input {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.88rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        #chat-input:focus {
+            border-color: var(--gold);
+        }
+        #chat-input::placeholder {
+            color: #aaa;
+        }
+        #chat-send {
+            background: var(--gold);
+            border: none;
+            border-radius: 8px;
+            width: 42px;
+            height: 42px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            flex-shrink: 0;
+        }
+        #chat-send:hover { background: var(--gold-light); }
+        #chat-send svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--navy);
+        }
+
+        @media (max-width: 480px) {
+            #chat-window {
+                width: calc(100vw - 20px);
+                height: calc(100vh - 120px);
+                bottom: 80px;
+                right: 10px;
+            }
+        }
     </style>
 
     <!-- JSON-LD Schema.org — Agent-Ready V2 -->
@@ -605,6 +778,122 @@
     <footer>
         <p>&copy; 2026 Suisse Fiduciaire — Genève, Suisse — Tous droits réservés</p>
     </footer>
+
+    <!-- CHAT WIDGET -->
+    <div id="chat-bubble" onclick="toggleChat()">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+    </div>
+
+    <div id="chat-window">
+        <div id="chat-header">
+            <div id="chat-header-dot"></div>
+            <div id="chat-header-text">
+                <h4>Suisse Fiduciaire</h4>
+                <p>En ligne — Réponse immédiate</p>
+            </div>
+            <button id="chat-close" onclick="toggleChat()">&times;</button>
+        </div>
+        <div id="chat-messages"></div>
+        <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Votre message..." onkeypress="if(event.key==='Enter')sendMessage()">
+            <button id="chat-send" onclick="sendMessage()">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const WORKER_URL = 'https://suisse-fiduciaire-agent.bielmannelyas.workers.dev';
+        let chatOpen = false;
+        let conversationHistory = [];
+        let isWaiting = false;
+        let firstOpen = true;
+
+        function toggleChat() {
+            chatOpen = !chatOpen;
+            document.getElementById('chat-window').classList.toggle('open', chatOpen);
+            if (chatOpen && firstOpen) {
+                firstOpen = false;
+                addBotMessage("Bonjour, bienvenue chez Suisse Fiduciaire. Si vous le souhaitez, je peux vous faire un pré-diagnostic gratuit en quelques questions — ça vous donnera une idée claire de ce dont vous avez besoin. Qu'est-ce qui vous amène aujourd'hui ?");
+            }
+            if (chatOpen) {
+                setTimeout(() => document.getElementById('chat-input').focus(), 100);
+            }
+        }
+
+        function addBotMessage(text) {
+            const messagesDiv = document.getElementById('chat-messages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'chat-msg bot';
+            msgDiv.textContent = text;
+            messagesDiv.appendChild(msgDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function addUserMessage(text) {
+            const messagesDiv = document.getElementById('chat-messages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'chat-msg user';
+            msgDiv.textContent = text;
+            messagesDiv.appendChild(msgDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function showTyping() {
+            const messagesDiv = document.getElementById('chat-messages');
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'chat-msg typing';
+            typingDiv.id = 'typing-indicator';
+            typingDiv.textContent = '...';
+            messagesDiv.appendChild(typingDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function removeTyping() {
+            const el = document.getElementById('typing-indicator');
+            if (el) el.remove();
+        }
+
+        async function sendMessage() {
+            if (isWaiting) return;
+            const input = document.getElementById('chat-input');
+            const text = input.value.trim();
+            if (!text) return;
+
+            input.value = '';
+            addUserMessage(text);
+            conversationHistory.push({ role: 'user', content: text });
+
+            isWaiting = true;
+            showTyping();
+
+            try {
+                const response = await fetch(WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ messages: conversationHistory })
+                });
+
+                const data = await response.json();
+                removeTyping();
+
+                if (data.content && data.content[0] && data.content[0].text) {
+                    const botText = data.content[0].text;
+                    conversationHistory.push({ role: 'assistant', content: botText });
+                    addBotMessage(botText);
+                } else if (data.error) {
+                    addBotMessage("Excusez-moi, je rencontre un problème technique. Vous pouvez nous contacter directement à contact@suisse-fiduciaire.com.");
+                } else {
+                    addBotMessage("Excusez-moi, je rencontre un problème technique. Vous pouvez nous contacter directement à contact@suisse-fiduciaire.com.");
+                }
+            } catch (error) {
+                removeTyping();
+                addBotMessage("Excusez-moi, je rencontre un problème technique. Vous pouvez nous contacter directement à contact@suisse-fiduciaire.com.");
+            }
+
+            isWaiting = false;
+        }
+    </script>
 
 </body>
 </html>
