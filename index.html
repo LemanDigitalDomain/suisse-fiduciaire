@@ -30,7 +30,6 @@
             background: var(--white);
         }
 
-        /* NAVIGATION */
         nav {
             background: var(--navy);
             padding: 20px 0;
@@ -68,7 +67,6 @@
         }
         .nav-links a:hover, .nav-links a.active { color: var(--gold); }
 
-        /* HERO */
         .hero {
             background: linear-gradient(145deg, var(--navy), var(--navy-light));
             color: var(--white);
@@ -113,7 +111,6 @@
             color: var(--navy);
         }
 
-        /* SECTIONS */
         .section {
             max-width: 900px;
             margin: 0 auto;
@@ -143,7 +140,6 @@
             margin-bottom: 30px;
         }
 
-        /* SERVICES GRID */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -167,7 +163,6 @@
             margin-bottom: 0;
         }
 
-        /* EXPERTISE SECTION (dark) */
         .section-dark {
             background: var(--navy);
             color: var(--white);
@@ -187,7 +182,6 @@
         .section-dark p { color: var(--silver); }
         .section-dark h3 { color: var(--gold); }
 
-        /* FAQ */
         .faq-item {
             border-bottom: 1px solid #e0e0e0;
             padding: 25px 0;
@@ -204,7 +198,6 @@
             margin-bottom: 0;
         }
 
-        /* CONTACT */
         .contact-section {
             background: var(--light);
             padding: 80px 30px;
@@ -229,7 +222,6 @@
         }
         .contact-info strong { color: var(--navy); }
 
-        /* FOOTER */
         footer {
             background: var(--navy);
             color: var(--silver);
@@ -401,34 +393,10 @@
             },
             {
               "@type": "Question",
-              "name": "Quelle est la différence entre une fiduciaire et un expert-comptable ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "En Suisse, la fiduciaire est un terme plus large qui englobe la comptabilité, l'audit, le conseil fiscal, la création d'entreprise et parfois la gestion de patrimoine. L'expert-comptable (ou expert-réviseur) est une qualification spécifique, réglementée par l'Autorité fédérale de surveillance en matière de révision (ASR), qui autorise notamment la révision des comptes annuels."
-              }
-            },
-            {
-              "@type": "Question",
               "name": "Combien coûtent les services d'une fiduciaire en Suisse ?",
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Les tarifs varient selon la complexité du mandat. Pour une PME genevoise, la tenue de comptabilité se situe généralement entre 200 et 500 CHF par mois. Un audit légal des comptes commence autour de 3'000 CHF. Un mandat de conseil fiscal ponctuel se facture entre 200 et 400 CHF de l'heure. Les forfaits annuels sont courants et offrent une meilleure prévisibilité budgétaire."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Quelles sont les obligations comptables d'une entreprise en Suisse ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Toute entreprise inscrite au registre du commerce suisse doit tenir une comptabilité conforme au Code des obligations (art. 957-963). Cela inclut la tenue des livres comptables, l'établissement des comptes annuels (bilan, compte de résultat), et selon la taille de l'entreprise, un contrôle ordinaire ou restreint par un organe de révision agréé."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Qu'est-ce que le contrôle restreint (opting-out) en Suisse ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les entreprises de moins de 10 employés à temps plein peuvent renoncer au contrôle restreint (opting-out) si tous les associés ou actionnaires y consentent. Cette option allège les obligations administratives mais ne dispense pas de la tenue d'une comptabilité conforme. Une fiduciaire peut néanmoins assurer un contrôle volontaire pour garantir la fiabilité des comptes."
               }
             },
             {
@@ -463,7 +431,6 @@
 </head>
 <body>
 
-    <!-- NAVIGATION -->
     <nav>
         <div class="nav-inner">
             <a href="#" class="nav-brand">SUISSE <span>FIDUCIAIRE</span></a>
@@ -477,7 +444,6 @@
         </div>
     </nav>
 
-    <!-- PAGE 1 : ACCUEIL / HERO -->
     <section class="hero" id="accueil">
         <h1>SUISSE <span>FIDUCIAIRE</span></h1>
         <p class="subtitle">Gestion comptable, audit financier et conseil fiscal<br>pour les entreprises de Suisse romande</p>
@@ -487,12 +453,10 @@
         <a href="#contact" class="cta">Prendre contact</a>
     </section>
 
-    <!-- PAGE 2 : SERVICES -->
     <section class="section" id="services">
         <h2>Nos services</h2>
         <div class="section-divider"></div>
         <p>Un accompagnement fiduciaire complet, adapté à chaque étape de la vie de votre entreprise sur le bassin lémanique.</p>
-
         <div class="services-grid">
             <div class="service-card">
                 <h4>Gestion comptable et révision</h4>
@@ -511,38 +475,30 @@
                 <p>Constitution de Sàrl, SA et succursales, rédaction des statuts, domiciliation juridique, inscription au registre du commerce, affiliation aux assurances sociales et mise en place de la structure comptable initiale.</p>
             </div>
         </div>
-
         <h3>Services complémentaires</h3>
         <p>Au-delà de l'offre fiduciaire classique, nous proposons un accompagnement dans la gestion des salaires (payroll), la planification successorale pour les dirigeants, le conseil en prévoyance professionnelle (LPP), et l'assistance administrative pour les sociétés étrangères souhaitant s'implanter en Suisse romande.</p>
     </section>
 
-    <!-- PAGE 3 : EXPERTISE LOCALE -->
     <section class="section-dark" id="expertise">
         <div class="inner">
             <h2>Expertise du cadre genevois</h2>
             <div class="section-divider"></div>
             <p>Le canton de Genève présente un environnement réglementaire et fiscal spécifique qui exige une expertise locale approfondie. Notre connaissance du terrain est un atout décisif pour nos clients.</p>
-
             <h3>Le cadre fiscal genevois</h3>
             <p>Genève applique un taux d'imposition effectif des bénéfices d'environ 14% pour les sociétés, l'un des plus compétitifs de Suisse. Le canton offre des déductions pour la recherche et le développement (patent box fédérale et cantonale), des régimes spécifiques pour les sociétés de négoce international, et un réseau de plus de 100 conventions de double imposition négociées par la Confédération.</p>
-
             <h3>Obligations réglementaires</h3>
             <p>Les entreprises établies à Genève sont soumises au droit fédéral (Code des obligations, Loi sur la TVA) et au droit cantonal genevois. Les fiduciaires opérant dans le canton doivent respecter la Loi sur le blanchiment d'argent (LBA) et être affiliées à un organisme d'autorégulation (OAR) reconnu par la FINMA. La révision des comptes est encadrée par la Loi sur la surveillance de la révision (LSR).</p>
-
             <h3>L'écosystème économique lémanique</h3>
             <p>Le bassin lémanique concentre plus de 1'200 multinationales, un secteur bancaire de premier plan, un pôle horloger mondial, et un écosystème de startups en forte croissance. Cette diversité économique requiert une fiduciaire capable d'accompagner des structures variées — de la startup deeptech au family office, de la PME industrielle à la société de trading de matières premières.</p>
-
             <h3>Spécificités transfrontalières</h3>
             <p>La proximité avec la France crée des enjeux spécifiques : imposition des travailleurs frontaliers, TVA sur les prestations transfrontalières, conventions fiscales franco-suisses, et structuration des sociétés avec des activités des deux côtés de la frontière. Notre expertise couvre ces problématiques transfrontalières quotidiennes.</p>
         </div>
     </section>
 
-    <!-- PAGE 4 : FAQ -->
     <section class="section" id="faq">
         <h2>Questions fréquentes</h2>
         <div class="section-divider"></div>
         <p>Les réponses aux questions les plus courantes sur les services fiduciaires en Suisse et à Genève.</p>
-
         <div class="faq-item">
             <h4>Qu'est-ce qu'une fiduciaire en Suisse ?</h4>
             <p>Une fiduciaire suisse est une société spécialisée dans la gestion comptable, l'audit, le conseil fiscal et la structuration d'entreprise. Elle accompagne les entreprises et les particuliers dans leurs obligations légales et leur optimisation financière, en conformité avec le droit fédéral et cantonal suisse.</p>
@@ -585,13 +541,11 @@
         </div>
     </section>
 
-    <!-- PAGE 5 : CONTACT -->
     <section class="contact-section" id="contact">
         <div class="inner">
             <h2>Contact</h2>
             <div class="section-divider" style="margin: 0 auto 30px;"></div>
             <p style="color: var(--text-light);">Prenez contact pour un premier échange confidentiel.<br>Nous répondons sous 24 heures ouvrées.</p>
-            
             <div class="contact-info">
                 <p><strong>Adresse :</strong> Genève, Suisse</p>
                 <p><strong>Email :</strong> contact@suisse-fiduciaire.com</p>
@@ -601,10 +555,14 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 Suisse Fiduciaire — Genève, Suisse — Tous droits réservés</p>
     </footer>
+
+    <!-- Chatbase Agent Widget -->
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qeA-Jg6N-j2MHtO6_D5cj";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
 
 </body>
 </html>
