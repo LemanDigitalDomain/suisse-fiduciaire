@@ -203,6 +203,8 @@
       transition: all var(--transition);
       position: relative;
       letter-spacing: 0.01em;
+      cursor: pointer;
+      border: none;
     }
 
     .hero-cta:hover {
@@ -351,6 +353,8 @@
       font-size: 0.82rem;
       font-weight: 600;
       transition: all var(--transition);
+      cursor: pointer;
+      border: none;
     }
 
     .fiche-cta:hover {
@@ -525,6 +529,8 @@
       font-size: 1rem;
       transition: all var(--transition);
       position: relative;
+      cursor: pointer;
+      border: none;
     }
 
     .diagnostic-cta:hover {
@@ -619,7 +625,7 @@
         <a href="#fiches">Fiches Métier</a>
         <a href="#ressources">Ressources</a>
         <a href="#faq">FAQ</a>
-        <a href="#diagnostic">Diagnostic</a>
+        <a href="javascript:void(0)" onclick="openChatbase()">Diagnostic</a>
       </nav>
     </div>
   </header>
@@ -628,7 +634,7 @@
   <section class="hero">
     <h1>Hub Juridique &amp; Fiscal<br>du <em>Bassin Lémanique</em></h1>
     <p>Toutes les ressources officielles pour créer, gérer et optimiser votre activité en Suisse romande. Liens directs vers les sources fédérales et cantonales.</p>
-    <a href="#diagnostic" class="hero-cta">Diagnostic fiscal gratuit →</a>
+    <button class="hero-cta" onclick="openChatbase()">Diagnostic fiscal gratuit →</button>
   </section>
 
   <!-- ════ TRUST BAR ════ -->
@@ -673,7 +679,7 @@
               <span class="source">Canton de Genève</span>
             </li>
           </ul>
-          <a href="#diagnostic" class="fiche-cta">Quelle forme pour vous ? →</a>
+          <button class="fiche-cta" onclick="openChatbase()">Quelle forme pour vous ? →</button>
         </article>
 
         <!-- FICHE 2 : Fiscalité cantonale -->
@@ -703,7 +709,7 @@
               <span class="source">ge.ch</span>
             </li>
           </ul>
-          <a href="#diagnostic" class="fiche-cta">Comparer GE vs VD →</a>
+          <button class="fiche-cta" onclick="openChatbase()">Comparer GE vs VD →</button>
         </article>
 
         <!-- FICHE 3 : Statut frontalier -->
@@ -733,7 +739,7 @@
               <span class="source">Canton de Genève</span>
             </li>
           </ul>
-          <a href="#diagnostic" class="fiche-cta">Vérifier votre situation →</a>
+          <button class="fiche-cta" onclick="openChatbase()">Vérifier votre situation →</button>
         </article>
 
         <!-- FICHE 4 : TVA -->
@@ -759,7 +765,7 @@
               <span class="source">AFC</span>
             </li>
           </ul>
-          <a href="#diagnostic" class="fiche-cta">Suis-je assujetti ? →</a>
+          <button class="fiche-cta" onclick="openChatbase()">Suis-je assujetti ? →</button>
         </article>
 
         <!-- FICHE 5 : Prévoyance & Assurances -->
@@ -789,7 +795,7 @@
               <span class="source">Guide Social Romand</span>
             </li>
           </ul>
-          <a href="#diagnostic" class="fiche-cta">Optimiser ma prévoyance →</a>
+          <button class="fiche-cta" onclick="openChatbase()">Optimiser ma prévoyance →</button>
         </article>
 
         <!-- FICHE 6 : Comptabilité & Obligations -->
@@ -815,7 +821,7 @@
               <span class="source">ASR</span>
             </li>
           </ul>
-          <a href="#diagnostic" class="fiche-cta">Vérifier mes obligations →</a>
+          <button class="fiche-cta" onclick="openChatbase()">Vérifier mes obligations →</button>
         </article>
 
       </div>
@@ -946,7 +952,7 @@
     <section id="diagnostic" class="diagnostic-section">
       <h2>Diagnostic Fiscal &amp; Juridique Gratuit</h2>
       <p>Notre assistant analyse votre situation en 3 minutes et vous oriente vers les bonnes ressources et les bons experts du bassin lémanique.</p>
-      <a href="#chatbase-widget" class="diagnostic-cta">Lancer mon diagnostic →</a>
+      <button class="diagnostic-cta" onclick="openChatbase()">Lancer mon diagnostic →</button>
       <div class="diagnostic-steps">
         <div class="diagnostic-step">
           <div class="step-num">1</div>
@@ -976,7 +982,7 @@
       <a href="#fiches">Fiches</a> · 
       <a href="#ressources">Ressources</a> · 
       <a href="#faq">FAQ</a> · 
-      <a href="#diagnostic">Diagnostic</a>
+      <a href="javascript:void(0)" onclick="openChatbase()">Diagnostic</a>
     </p>
     <p style="margin-top: 20px; font-size: 0.75rem;">© 2026 Suisse Fiduciaire — Leman Digital Asset</p>
   </footer>
@@ -993,20 +999,23 @@
     });
   </script>
 
-  <!-- ════ CHATBASE WIDGET PLACEHOLDER ════ -->
-  <!-- 
-    INTÉGRATION CHATBASE : 
-    Remplacer ce commentaire par le script Chatbase avec le bot ID.
-    Le flow de l'agent est défini dans le prompt Chatbase séparé.
-    
-    <script>
-      window.embeddedChatbotConfig = {
-        chatbotId: "VOTRE_BOT_ID",
-        domain: "www.chatbase.co"
+  <!-- ════ OUVRIR CHATBASE DEPUIS LES BOUTONS ════ -->
+  <script>
+    function openChatbase() {
+      // Tente d'ouvrir le widget Chatbase via l'API
+      if (window.chatbase) {
+        try { window.chatbase('open'); } catch(e) {}
       }
-    </script>
-    <script src="https://www.chatbase.co/embed.min.js" defer></script>
-  -->
+      // Fallback : clic sur le bouton bulle Chatbase
+      var bubble = document.querySelector('iframe[title*="chatbase"], .chatbase-bubble, [id*="chatbase"]');
+      if (bubble) { bubble.click(); }
+    }
+  </script>
+
+  <!-- ════ CHATBASE WIDGET ════ -->
+  <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qeA-Jg6N-j2MHtO6_D5cj";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
 
 </body>
 </html>
