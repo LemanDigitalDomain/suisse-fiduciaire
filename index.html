@@ -1,568 +1,1012 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="Hglj93LBZ4lgf4qFdaK5gzya8LX1Wy3QnzUQX9hUiOw" />
-    <title>Suisse Fiduciaire | Services fiduciaires en Suisse romande</title>
-    <meta name="description" content="Fiduciaire suisse spécialisée en gestion comptable, audit financier et conseil fiscal pour les entreprises et particuliers de Suisse romande. Expertise en conformité FINMA et optimisation fiscale.">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
-        
-        :root {
-            --navy: #0B132B;
-            --navy-light: #1C2541;
-            --gold: #C9A84C;
-            --gold-light: #D4B968;
-            --silver: #8D99AE;
-            --light: #F5F3EE;
-            --white: #FFFFFF;
-            --text: #2C2C2C;
-            --text-light: #555555;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text);
-            line-height: 1.7;
-            background: var(--white);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suisse Fiduciaire — Hub Juridique & Fiscal du Bassin Lémanique</title>
+  <meta name="description" content="Ressources juridiques et fiscales officielles pour entreprises et indépendants du bassin lémanique. Fiscalité cantonale, création d'entreprise, statut frontalier, TVA, prévoyance.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://suisse-fiduciaire.com/hub-juridique">
 
-        nav {
-            background: var(--navy);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
-        }
-        .nav-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .nav-brand {
-            font-family: 'Playfair Display', serif;
-            color: var(--white);
-            font-size: 1.4rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-decoration: none;
-        }
-        .nav-brand span { color: var(--gold); }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a {
-            color: var(--silver);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-
-        .hero {
-            background: linear-gradient(145deg, var(--navy), var(--navy-light));
-            color: var(--white);
-            padding: 100px 30px;
-            text-align: center;
-        }
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-        .hero h1 span { color: var(--gold); }
-        .hero .subtitle {
-            font-size: 1.1rem;
-            color: var(--silver);
-            font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-        .hero .divider {
-            width: 60px;
-            height: 2px;
-            background: var(--gold);
-            margin: 0 auto 40px;
-        }
-        .hero .cta {
-            display: inline-block;
-            padding: 14px 35px;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            text-decoration: none;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-        .hero .cta:hover {
-            background: var(--gold);
-            color: var(--navy);
-        }
-
-        .section {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 80px 30px;
-        }
-        .section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--navy);
-            margin-bottom: 15px;
-        }
-        .section h3 {
-            font-size: 1.2rem;
-            color: var(--gold);
-            margin: 40px 0 15px;
-            font-weight: 600;
-        }
-        .section p {
-            color: var(--text-light);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-        .section-divider {
-            width: 40px;
-            height: 2px;
-            background: var(--gold);
-            margin-bottom: 30px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .service-card {
-            padding: 30px;
-            background: var(--light);
-            border-left: 3px solid var(--gold);
-        }
-        .service-card h4 {
-            font-size: 1rem;
-            color: var(--navy);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        .service-card p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 0;
-        }
-
-        .section-dark {
-            background: var(--navy);
-            color: var(--white);
-            padding: 80px 30px;
-        }
-        .section-dark .inner {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .section-dark h2 {
-            color: var(--white);
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-        .section-dark .section-divider { background: var(--gold); }
-        .section-dark p { color: var(--silver); }
-        .section-dark h3 { color: var(--gold); }
-
-        .faq-item {
-            border-bottom: 1px solid #e0e0e0;
-            padding: 25px 0;
-        }
-        .faq-item h4 {
-            font-size: 1rem;
-            color: var(--navy);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        .faq-item p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 0;
-        }
-
-        .contact-section {
-            background: var(--light);
-            padding: 80px 30px;
-            text-align: center;
-        }
-        .contact-section .inner { max-width: 600px; margin: 0 auto; }
-        .contact-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--navy);
-            margin-bottom: 15px;
-        }
-        .contact-info {
-            margin-top: 30px;
-            text-align: left;
-            display: inline-block;
-        }
-        .contact-info p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            margin-bottom: 8px;
-        }
-        .contact-info strong { color: var(--navy); }
-
-        footer {
-            background: var(--navy);
-            color: var(--silver);
-            text-align: center;
-            padding: 30px;
-            font-size: 0.8rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .services-grid { grid-template-columns: 1fr; }
-            .nav-links { gap: 15px; }
-            .nav-links a { font-size: 0.75rem; }
-        }
-    </style>
-
-    <!-- JSON-LD Schema.org — Agent-Ready V2 -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": ["FinancialService", "AccountingService", "LocalBusiness"],
-          "@id": "https://www.suisse-fiduciaire.com/#organization",
-          "name": "Suisse Fiduciaire",
-          "url": "https://www.suisse-fiduciaire.com",
-          "description": "Fiduciaire suisse spécialisée dans la gestion comptable, l'audit financier et le conseil fiscal pour les entreprises et particuliers de Suisse romande. Expertise en conformité FINMA, optimisation fiscale et structuration patrimoniale.",
-          "areaServed": [
-            { "@type": "Country", "name": "Suisse" },
-            { "@type": "AdministrativeArea", "name": "Suisse romande" },
-            { "@type": "City", "name": "Genève" },
-            { "@type": "City", "name": "Lausanne" },
-            { "@type": "City", "name": "Nyon" }
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Genève",
-            "addressRegion": "GE",
-            "postalCode": "1200",
-            "addressCountry": "CH"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "46.2044",
-            "longitude": "6.1432"
-          },
-          "telephone": "+41-22-000-00-00",
-          "email": "contact@suisse-fiduciaire.com",
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-              "opens": "09:00",
-              "closes": "18:00"
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://suisse-fiduciaire.com/hub-juridique",
+        "name": "Hub Juridique & Fiscal — Suisse Fiduciaire",
+        "description": "Centre de ressources juridiques et fiscales officielles pour le bassin lémanique.",
+        "inLanguage": ["fr", "en"],
+        "isPartOf": { "@id": "https://suisse-fiduciaire.com/#website" }
+      },
+      {
+        "@type": "FinancialService",
+        "@id": "https://suisse-fiduciaire.com/#business",
+        "name": "Suisse Fiduciaire",
+        "description": "Orientation fiduciaire et fiscale pour entreprises et indépendants du bassin lémanique.",
+        "areaServed": [
+          { "@type": "State", "name": "Genève" },
+          { "@type": "State", "name": "Vaud" },
+          { "@type": "Country", "name": "Suisse" }
+        ],
+        "serviceType": ["Fiduciaire", "Conseil fiscal", "Création d'entreprise", "Comptabilité"],
+        "url": "https://suisse-fiduciaire.com"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quel est le taux d'imposition des entreprises à Genève ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le taux effectif d'imposition des bénéfices à Genève est d'environ 13.99% après la RFFA. Détails sur ge.ch/impots."
             }
-          ],
-          "priceRange": "$$-$$$",
-          "currenciesAccepted": "CHF, EUR",
-          "paymentAccepted": "Virement bancaire, carte de crédit",
-          "knowsLanguage": ["fr", "en", "de"],
-          "knowsAbout": [
-            "Fiduciaire suisse", "Swiss fiduciary",
-            "Comptabilité PME", "Audit financier",
-            "Optimisation fiscale suisse", "Swiss tax optimization",
-            "Conformité FINMA", "Gestion comptable",
-            "Conseil fiscal Suisse romande",
-            "Création société Genève", "Fiscalité frontaliers"
-          ],
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Services fiduciaires",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Gestion comptable et révision",
-                  "description": "Tenue de comptabilité, comptes annuels, gestion TVA, reporting financier conforme au Code des obligations suisse."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Conseil fiscal et optimisation",
-                  "description": "Planification fiscale cantonale et fédérale, déclarations d'impôts, rulings fiscaux, optimisation charge fiscale."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Audit et conformité réglementaire",
-                  "description": "Contrôle restreint et ordinaire, audit LBA, vérification processus internes, accompagnement contrôles fiscaux."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Création et structuration d'entreprise",
-                  "description": "Constitution Sàrl et SA, rédaction statuts, domiciliation, inscription registre du commerce, affiliation AVS."
-                }
-              }
-            ]
           },
-          "potentialAction": [
-            {
-              "@type": "ReserveAction",
-              "name": "Prendre rendez-vous",
-              "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://www.suisse-fiduciaire.com/#contact",
-                "actionPlatform": [
-                  "http://schema.org/DesktopWebPlatform",
-                  "http://schema.org/MobileWebPlatform"
-                ]
-              },
-              "result": {
-                "@type": "Reservation",
-                "name": "Consultation initiale"
-              }
-            },
-            {
-              "@type": "CommunicateAction",
-              "name": "Contacter par email",
-              "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "mailto:contact@suisse-fiduciaire.com"
-              }
+          {
+            "@type": "Question",
+            "name": "Comment créer une Sàrl en Suisse ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La création d'une Sàrl nécessite un capital minimum de CHF 20'000, des statuts notariés et l'inscription au Registre du Commerce. Guide complet sur easygov.swiss."
             }
-          ],
-          "sameAs": []
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://www.suisse-fiduciaire.com/#website",
-          "url": "https://www.suisse-fiduciaire.com",
-          "name": "Suisse Fiduciaire",
-          "publisher": { "@id": "https://www.suisse-fiduciaire.com/#organization" },
-          "inLanguage": ["fr-CH", "fr-FR", "en"]
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Qu'est-ce qu'une fiduciaire en Suisse ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Une fiduciaire suisse est une société spécialisée dans la gestion comptable, l'audit, le conseil fiscal et la structuration d'entreprise. Elle accompagne les entreprises et les particuliers dans leurs obligations légales et leur optimisation financière, en conformité avec le droit fédéral et cantonal suisse."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Comment choisir une fiduciaire à Genève ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Privilégiez une fiduciaire disposant d'une solide connaissance du cadre fiscal genevois, une expérience vérifiable avec des entreprises de votre secteur, une transparence sur les honoraires, et idéalement une accréditation ou affiliation à un organisme reconnu (Fiduciaire Suisse, EXPERTsuisse). La proximité géographique et la réactivité sont également des critères importants."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Quels sont les avantages fiscaux pour les entreprises à Genève ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le canton de Genève offre un cadre fiscal compétitif pour les entreprises : un taux d'imposition effectif des bénéfices parmi les plus attractifs de Suisse, des déductions spécifiques pour la R&D (patent box), des conventions de double imposition avec plus de 100 pays, et des régimes particuliers pour les sociétés holding et les sociétés de négoce international."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Combien coûtent les services d'une fiduciaire en Suisse ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les tarifs varient selon la complexité du mandat. Pour une PME genevoise, la tenue de comptabilité se situe généralement entre 200 et 500 CHF par mois. Un audit légal des comptes commence autour de 3'000 CHF. Un mandat de conseil fiscal ponctuel se facture entre 200 et 400 CHF de l'heure. Les forfaits annuels sont courants et offrent une meilleure prévisibilité budgétaire."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Comment créer une entreprise à Genève ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "La création d'une Sàrl ou SA à Genève nécessite : la rédaction des statuts, un apport en capital minimum (20'000 CHF pour une Sàrl, 100'000 CHF pour une SA dont 50'000 libérés), l'ouverture d'un compte de consignation, l'acte authentique chez un notaire, l'inscription au registre du commerce, et l'affiliation aux assurances sociales (AVS/AI). Une fiduciaire gère l'ensemble de ce processus."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Quelle est la réglementation FINMA applicable aux fiduciaires ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Les fiduciaires suisses sont soumises à la Loi sur le blanchiment d'argent (LBA) et doivent être affiliées à un organisme d'autorégulation (OAR) reconnu par la FINMA, ou directement surveillées par la FINMA. Elles ont des obligations de diligence en matière de vérification de l'identité des clients et de signalement des transactions suspectes."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Peut-on changer de fiduciaire en cours d'exercice ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Oui, il est possible de changer de fiduciaire à tout moment, même en cours d'exercice. Le processus implique la résiliation du mandat actuel (selon les conditions contractuelles), le transfert des documents comptables, et une reprise en main par la nouvelle fiduciaire. Il est recommandé de procéder au changement en début d'exercice pour simplifier la transition."
-              }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelles sont les obligations fiscales d'un frontalier genevois ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les frontaliers travaillant à Genève sont imposés à la source en Suisse. Le canton applique un barème spécifique. Informations sur ge.ch/frontaliers."
             }
-          ]
-        }
-      ]
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Satoshi:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --paper: #f8f6f1;
+      --cream: #eee9df;
+      --rouge: #c41e3a;
+      --rouge-dark: #9a1830;
+      --bleu: #1b3a5c;
+      --bleu-light: #2a5a8c;
+      --or: #b8860b;
+      --or-light: #d4a528;
+      --gris: #6b6b6b;
+      --gris-light: #a0a0a0;
+      --border: #d4cfc5;
+      --card-bg: #ffffff;
+      --shadow: 0 2px 20px rgba(0,0,0,0.06);
+      --shadow-hover: 0 8px 40px rgba(0,0,0,0.1);
+      --radius: 6px;
+      --max-w: 1140px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    </script>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Satoshi', -apple-system, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: var(--bleu);
+      color: white;
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    .header-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--or-light); }
+
+    nav a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      margin-left: 28px;
+      transition: color var(--transition);
+      letter-spacing: 0.01em;
+    }
+
+    nav a:hover { color: var(--or-light); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--bleu) 0%, #0f2440 100%);
+      color: white;
+      padding: 80px 24px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -10%;
+      width: 120%;
+      height: 200%;
+      background: radial-gradient(ellipse at 30% 50%, rgba(184,134,11,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--or-light);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 640px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--or);
+      color: white;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all var(--transition);
+      position: relative;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-cta:hover {
+      background: var(--or-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(184,134,11,0.3);
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      text-align: center;
+    }
+
+    .trust-bar p {
+      font-size: 0.82rem;
+      color: var(--gris);
+      max-width: var(--max-w);
+      margin: 0 auto;
+      letter-spacing: 0.02em;
+    }
+
+    .trust-bar strong { color: var(--bleu); font-weight: 700; }
+
+    /* ── MAIN ── */
+    .main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    /* ── SECTION TITLES ── */
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      color: var(--bleu);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      color: var(--gris);
+      font-size: 0.95rem;
+      margin-bottom: 36px;
+      line-height: 1.5;
+    }
+
+    /* ── FICHES MÉTIER (CARDS) ── */
+    .fiches-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .fiche-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fiche-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--or);
+      transform: scaleY(0);
+      transition: transform var(--transition);
+      transform-origin: top;
+    }
+
+    .fiche-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+
+    .fiche-card:hover::before { transform: scaleY(1); }
+
+    .fiche-icon {
+      font-size: 1.6rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .fiche-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--bleu);
+      margin-bottom: 10px;
+    }
+
+    .fiche-card p {
+      font-size: 0.9rem;
+      color: var(--gris);
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+
+    .fiche-links {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px;
+    }
+
+    .fiche-links li {
+      padding: 6px 0;
+      border-bottom: 1px solid #f0ece4;
+      font-size: 0.85rem;
+    }
+
+    .fiche-links li:last-child { border-bottom: none; }
+
+    .fiche-links a {
+      color: var(--bleu-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    .fiche-links a:hover { color: var(--rouge); }
+
+    .fiche-links .source {
+      color: var(--gris-light);
+      font-size: 0.78rem;
+      font-weight: 400;
+    }
+
+    .fiche-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bleu);
+      color: white;
+      padding: 9px 18px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: all var(--transition);
+    }
+
+    .fiche-cta:hover {
+      background: var(--bleu-light);
+    }
+
+    /* ── RESSOURCES OFFICIELLES ── */
+    .ressources-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px 36px;
+      margin-bottom: 64px;
+    }
+
+    .ressources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .ressource-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px;
+      border: 1px solid #eee9df;
+      border-radius: var(--radius);
+      transition: all var(--transition);
+    }
+
+    .ressource-item:hover {
+      border-color: var(--or);
+      background: #fdfcf9;
+    }
+
+    .ressource-badge {
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      background: #f0ece4;
+    }
+
+    .ressource-item h4 {
+      font-size: 0.92rem;
+      color: var(--ink);
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .ressource-item p {
+      font-size: 0.82rem;
+      color: var(--gris);
+      line-height: 1.45;
+      margin-bottom: 6px;
+    }
+
+    .ressource-item a {
+      color: var(--bleu-light);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .ressource-item a:hover { color: var(--rouge); }
+
+    /* ── FAQ ── */
+    .faq-section { margin-bottom: 64px; }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+    }
+
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+
+    .faq-question {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--bleu);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.3rem;
+      color: var(--or);
+      font-weight: 400;
+      transition: transform var(--transition);
+    }
+
+    .faq-item.open .faq-question::after { transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      font-size: 0.9rem;
+      color: var(--gris);
+      line-height: 1.6;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 500px;
+      padding-top: 14px;
+    }
+
+    .faq-answer a {
+      color: var(--bleu-light);
+      font-weight: 500;
+    }
+
+    /* ── DIAGNOSTIC CTA ── */
+    .diagnostic-section {
+      background: linear-gradient(135deg, var(--bleu) 0%, #0f2440 100%);
+      color: white;
+      border-radius: var(--radius);
+      padding: 56px 40px;
+      text-align: center;
+      margin-bottom: 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .diagnostic-section::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 50%;
+      height: 160%;
+      background: radial-gradient(ellipse, rgba(184,134,11,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .diagnostic-section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .diagnostic-section p {
+      color: rgba(255,255,255,0.75);
+      max-width: 540px;
+      margin: 0 auto 28px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .diagnostic-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--or);
+      color: white;
+      padding: 15px 36px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all var(--transition);
+      position: relative;
+    }
+
+    .diagnostic-cta:hover {
+      background: var(--or-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(184,134,11,0.3);
+    }
+
+    .diagnostic-steps {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 32px;
+      position: relative;
+    }
+
+    .diagnostic-step {
+      text-align: center;
+    }
+
+    .diagnostic-step .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin: 0 auto 8px;
+    }
+
+    .diagnostic-step span {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.5);
+      padding: 40px 24px;
+      text-align: center;
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+
+    .footer a { color: var(--or-light); text-decoration: none; }
+    .footer a:hover { color: var(--or); }
+
+    .footer-brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .fiches-grid { grid-template-columns: 1fr; }
+      .ressources-grid { grid-template-columns: 1fr; }
+      .diagnostic-steps { flex-direction: column; gap: 16px; }
+      .hero { padding: 56px 20px 48px; }
+      .ressources-section { padding: 28px 20px; }
+      .diagnostic-section { padding: 40px 24px; }
+      nav { display: none; }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fiche-card { animation: fadeUp 0.5s ease both; }
+    .fiche-card:nth-child(2) { animation-delay: 0.08s; }
+    .fiche-card:nth-child(3) { animation-delay: 0.16s; }
+    .fiche-card:nth-child(4) { animation-delay: 0.24s; }
+    .fiche-card:nth-child(5) { animation-delay: 0.32s; }
+    .fiche-card:nth-child(6) { animation-delay: 0.40s; }
+  </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-inner">
-            <a href="#" class="nav-brand">SUISSE <span>FIDUCIAIRE</span></a>
-            <div class="nav-links">
-                <a href="#accueil" class="active">Accueil</a>
-                <a href="#services">Services</a>
-                <a href="#expertise">Expertise</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </nav>
+  <!-- ════ HEADER ════ -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="https://suisse-fiduciaire.com" class="logo">Suisse<span>Fiduciaire</span></a>
+      <nav>
+        <a href="#fiches">Fiches Métier</a>
+        <a href="#ressources">Ressources</a>
+        <a href="#faq">FAQ</a>
+        <a href="#diagnostic">Diagnostic</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="hero" id="accueil">
-        <h1>SUISSE <span>FIDUCIAIRE</span></h1>
-        <p class="subtitle">Gestion comptable, audit financier et conseil fiscal<br>pour les entreprises de Suisse romande</p>
-        <div class="divider"></div>
-        <p class="subtitle" style="font-size: 0.95rem; max-width: 700px;">Depuis Genève, nous accompagnons les PME, startups et sociétés internationales dans leurs obligations comptables, leur optimisation fiscale et leur structuration juridique. Rigueur, discrétion et expertise réglementaire suisse.</p>
-        <br>
-        <a href="#contact" class="cta">Prendre contact</a>
+  <!-- ════ HERO ════ -->
+  <section class="hero">
+    <h1>Hub Juridique &amp; Fiscal<br>du <em>Bassin Lémanique</em></h1>
+    <p>Toutes les ressources officielles pour créer, gérer et optimiser votre activité en Suisse romande. Liens directs vers les sources fédérales et cantonales.</p>
+    <a href="#diagnostic" class="hero-cta">Diagnostic fiscal gratuit →</a>
+  </section>
+
+  <!-- ════ TRUST BAR ════ -->
+  <div class="trust-bar">
+    <p>Sources exclusives : <strong>Fedlex</strong> · <strong>ge.ch</strong> · <strong>vd.ch</strong> · <strong>EasyGov</strong> · <strong>AFC</strong> · <strong>Guide Social Romand</strong> · <strong>SECO</strong></p>
+  </div>
+
+  <!-- ════ MAIN CONTENT ════ -->
+  <main class="main">
+
+    <!-- ── FICHES MÉTIER ── -->
+    <section id="fiches">
+      <h2 class="section-title">Fiches Métier</h2>
+      <p class="section-subtitle">Six thématiques clés pour les professionnels et indépendants du bassin lémanique, avec liens directs vers les textes officiels.</p>
+
+      <div class="fiches-grid">
+
+        <!-- FICHE 1 : Création d'entreprise -->
+        <article class="fiche-card">
+          <span class="fiche-icon">🏛</span>
+          <h3>Création d'Entreprise en Suisse</h3>
+          <p>Raison individuelle, Sàrl ou SA : chaque forme juridique a ses règles. Capital minimum, inscription RC, obligations légales.</p>
+          <ul class="fiche-links">
+            <li>
+              <a href="https://www.easygov.swiss/easygov/#/fr" target="_blank" rel="noopener">EasyGov — Guichet unique création d'entreprise</a>
+              <span class="source">Confédération suisse</span>
+            </li>
+            <li>
+              <a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr" target="_blank" rel="noopener">Code des obligations (CO) — Art. 772 ss. (Sàrl)</a>
+              <span class="source">Fedlex</span>
+            </li>
+            <li>
+              <a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#part_3/tit_26" target="_blank" rel="noopener">CO — Art. 620 ss. (SA)</a>
+              <span class="source">Fedlex</span>
+            </li>
+            <li>
+              <a href="https://www.ge.ch/creer-son-entreprise" target="_blank" rel="noopener">Créer son entreprise à Genève</a>
+              <span class="source">ge.ch</span>
+            </li>
+            <li>
+              <a href="https://www.oge.ch/" target="_blank" rel="noopener">Office genevois de cautionnement (OGE)</a>
+              <span class="source">Canton de Genève</span>
+            </li>
+          </ul>
+          <a href="#diagnostic" class="fiche-cta">Quelle forme pour vous ? →</a>
+        </article>
+
+        <!-- FICHE 2 : Fiscalité cantonale -->
+        <article class="fiche-card">
+          <span class="fiche-icon">📊</span>
+          <h3>Fiscalité Cantonale GE/VD</h3>
+          <p>Taux d'imposition des bénéfices, RFFA, impôt à la source, barèmes. Comparaison Genève vs Vaud pour optimiser votre implantation.</p>
+          <ul class="fiche-links">
+            <li>
+              <a href="https://www.ge.ch/impots" target="_blank" rel="noopener">Administration fiscale cantonale — Genève</a>
+              <span class="source">ge.ch</span>
+            </li>
+            <li>
+              <a href="https://www.vd.ch/themes/etat-droit-finances/impots" target="_blank" rel="noopener">Administration cantonale des impôts — Vaud</a>
+              <span class="source">vd.ch</span>
+            </li>
+            <li>
+              <a href="https://www.estv.admin.ch/estv/fr/accueil.html" target="_blank" rel="noopener">Administration fédérale des contributions (AFC)</a>
+              <span class="source">Confédération</span>
+            </li>
+            <li>
+              <a href="https://www.fedlex.admin.ch/eli/cc/1991/1184_1184_1184/fr" target="_blank" rel="noopener">Loi fédérale sur l'impôt fédéral direct (LIFD)</a>
+              <span class="source">Fedlex</span>
+            </li>
+            <li>
+              <a href="https://www.ge.ch/rffa-reforme-fiscale-financement-avs" target="_blank" rel="noopener">RFFA — Détails de la réforme à Genève</a>
+              <span class="source">ge.ch</span>
+            </li>
+          </ul>
+          <a href="#diagnostic" class="fiche-cta">Comparer GE vs VD →</a>
+        </article>
+
+        <!-- FICHE 3 : Statut frontalier -->
+        <article class="fiche-card">
+          <span class="fiche-icon">🛂</span>
+          <h3>Statut Frontalier &amp; Permis G</h3>
+          <p>Imposition à la source, accords bilatéraux, obligations déclaratives côté français et suisse. Tout pour les travailleurs frontaliers.</p>
+          <ul class="fiche-links">
+            <li>
+              <a href="https://www.ge.ch/travailler-tant-frontaliere-frontalier" target="_blank" rel="noopener">Travailler en tant que frontalier — Genève</a>
+              <span class="source">ge.ch</span>
+            </li>
+            <li>
+              <a href="https://www.sem.admin.ch/sem/fr/home/themen/fza_schweiz-eu-efta/eu-efta_buerger_schweiz/ausweis-g--grenzgaenger-innen--eu-efta.html" target="_blank" rel="noopener">Permis G — Secrétariat d'État aux migrations (SEM)</a>
+              <span class="source">Confédération</span>
+            </li>
+            <li>
+              <a href="https://www.fedlex.admin.ch/eli/cc/1967/1232_1280_1268/fr" target="_blank" rel="noopener">Convention fiscale franco-suisse (1966)</a>
+              <span class="source">Fedlex</span>
+            </li>
+            <li>
+              <a href="https://www.guidesocial.ch/recherche/fiche/frontaliers-152" target="_blank" rel="noopener">Fiche Frontaliers — Guide Social Romand</a>
+              <span class="source">Guide Social Romand</span>
+            </li>
+            <li>
+              <a href="https://www.ocpm.geneve.ch/" target="_blank" rel="noopener">Office cantonal de la population et des migrations</a>
+              <span class="source">Canton de Genève</span>
+            </li>
+          </ul>
+          <a href="#diagnostic" class="fiche-cta">Vérifier votre situation →</a>
+        </article>
+
+        <!-- FICHE 4 : TVA -->
+        <article class="fiche-card">
+          <span class="fiche-icon">🧾</span>
+          <h3>TVA Suisse &amp; Assujettissement</h3>
+          <p>Seuil d'assujettissement de CHF 100'000, méthodes de décompte, taux en vigueur, spécificités pour prestations transfrontalières.</p>
+          <ul class="fiche-links">
+            <li>
+              <a href="https://www.estv.admin.ch/estv/fr/accueil/taxe-sur-la-valeur-ajoutee.html" target="_blank" rel="noopener">TVA — Administration fédérale des contributions</a>
+              <span class="source">AFC</span>
+            </li>
+            <li>
+              <a href="https://www.fedlex.admin.ch/eli/cc/2009/615/fr" target="_blank" rel="noopener">Loi fédérale sur la TVA (LTVA)</a>
+              <span class="source">Fedlex</span>
+            </li>
+            <li>
+              <a href="https://www.kmu.admin.ch/kmu/fr/home/savoir-pratique/finances/impots/tva.html" target="_blank" rel="noopener">Guide TVA pour PME</a>
+              <span class="source">SECO / PME</span>
+            </li>
+            <li>
+              <a href="https://www.estv.admin.ch/estv/fr/accueil/taxe-sur-la-valeur-ajoutee/taux-de-la-tva-suisse.html" target="_blank" rel="noopener">Taux TVA en vigueur (8.1% / 2.6% / 3.8%)</a>
+              <span class="source">AFC</span>
+            </li>
+          </ul>
+          <a href="#diagnostic" class="fiche-cta">Suis-je assujetti ? →</a>
+        </article>
+
+        <!-- FICHE 5 : Prévoyance & Assurances -->
+        <article class="fiche-card">
+          <span class="fiche-icon">🛡</span>
+          <h3>Prévoyance &amp; Assurances Sociales</h3>
+          <p>Système des 3 piliers, AVS/AI, LPP, 3ème pilier A, allocations familiales. Droits et obligations pour indépendants et employeurs.</p>
+          <ul class="fiche-links">
+            <li>
+              <a href="https://www.bsv.admin.ch/bsv/fr/home.html" target="_blank" rel="noopener">Office fédéral des assurances sociales (OFAS)</a>
+              <span class="source">Confédération</span>
+            </li>
+            <li>
+              <a href="https://www.ahv-iv.ch/fr/" target="_blank" rel="noopener">Centre d'information AVS/AI</a>
+              <span class="source">ahv-iv.ch</span>
+            </li>
+            <li>
+              <a href="https://www.guidesocial.ch/recherche/fiche/prevoyance-professionnelle-lpp-190" target="_blank" rel="noopener">Prévoyance LPP — Guide Social Romand</a>
+              <span class="source">Guide Social Romand</span>
+            </li>
+            <li>
+              <a href="https://www.fedlex.admin.ch/eli/cc/1982/196_196_196/fr" target="_blank" rel="noopener">Loi fédérale sur la prévoyance professionnelle (LPP)</a>
+              <span class="source">Fedlex</span>
+            </li>
+            <li>
+              <a href="https://www.guidesocial.ch/recherche/fiche/3eme-pilier-a-192" target="_blank" rel="noopener">3ème pilier A — Guide Social Romand</a>
+              <span class="source">Guide Social Romand</span>
+            </li>
+          </ul>
+          <a href="#diagnostic" class="fiche-cta">Optimiser ma prévoyance →</a>
+        </article>
+
+        <!-- FICHE 6 : Comptabilité & Obligations -->
+        <article class="fiche-card">
+          <span class="fiche-icon">📁</span>
+          <h3>Comptabilité &amp; Obligations Légales</h3>
+          <p>Tenue des comptes, normes Swiss GAAP RPC, obligation de révision, bouclement annuel. Ce que la loi exige selon votre taille.</p>
+          <ul class="fiche-links">
+            <li>
+              <a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr#part_3/tit_32" target="_blank" rel="noopener">CO — Art. 957 ss. (Comptabilité commerciale)</a>
+              <span class="source">Fedlex</span>
+            </li>
+            <li>
+              <a href="https://www.fer.ch/fr/" target="_blank" rel="noopener">Swiss GAAP RPC — Fondation pour les recommandations</a>
+              <span class="source">fer.ch</span>
+            </li>
+            <li>
+              <a href="https://www.kmu.admin.ch/kmu/fr/home/savoir-pratique/finances/comptabilite-et-revision.html" target="_blank" rel="noopener">Guide Comptabilité & Révision pour PME</a>
+              <span class="source">SECO / PME</span>
+            </li>
+            <li>
+              <a href="https://www.rab-asr.ch/#/fr" target="_blank" rel="noopener">Autorité fédérale de surveillance en matière de révision</a>
+              <span class="source">ASR</span>
+            </li>
+          </ul>
+          <a href="#diagnostic" class="fiche-cta">Vérifier mes obligations →</a>
+        </article>
+
+      </div>
     </section>
 
-    <section class="section" id="services">
-        <h2>Nos services</h2>
-        <div class="section-divider"></div>
-        <p>Un accompagnement fiduciaire complet, adapté à chaque étape de la vie de votre entreprise sur le bassin lémanique.</p>
-        <div class="services-grid">
-            <div class="service-card">
-                <h4>Gestion comptable et révision</h4>
-                <p>Tenue de comptabilité, établissement des comptes annuels, gestion de la TVA, rapprochements bancaires et reporting financier conforme au Code des obligations suisse. Nous assurons la fiabilité de vos données financières au quotidien.</p>
-            </div>
-            <div class="service-card">
-                <h4>Conseil fiscal et optimisation</h4>
-                <p>Planification fiscale cantonale et fédérale, déclarations d'impôts, demandes de rulings fiscaux, structuration des rémunérations et optimisation de la charge fiscale globale. Expertise approfondie du cadre fiscal genevois et vaudois.</p>
-            </div>
-            <div class="service-card">
-                <h4>Audit et conformité réglementaire</h4>
-                <p>Contrôle restreint et contrôle ordinaire des comptes annuels, audit de conformité LBA (Loi sur le blanchiment d'argent), vérification des processus internes et accompagnement lors des contrôles de l'Administration fiscale.</p>
-            </div>
-            <div class="service-card">
-                <h4>Création et structuration d'entreprise</h4>
-                <p>Constitution de Sàrl, SA et succursales, rédaction des statuts, domiciliation juridique, inscription au registre du commerce, affiliation aux assurances sociales et mise en place de la structure comptable initiale.</p>
-            </div>
+    <!-- ── RESSOURCES OFFICIELLES ── -->
+    <section id="ressources" class="ressources-section">
+      <h2 class="section-title">Ressources Officielles</h2>
+      <p class="section-subtitle">Accès direct aux portails fédéraux, cantonaux et professionnels de référence.</p>
+
+      <div class="ressources-grid">
+        <div class="ressource-item">
+          <div class="ressource-badge">⚖️</div>
+          <div>
+            <h4>Fedlex — Recueil du droit fédéral</h4>
+            <p>Tous les textes de loi fédéraux : CO, LIFD, LTVA, LPP, LAMal, etc.</p>
+            <a href="https://www.fedlex.admin.ch/fr/home" target="_blank" rel="noopener">fedlex.admin.ch →</a>
+          </div>
         </div>
-        <h3>Services complémentaires</h3>
-        <p>Au-delà de l'offre fiduciaire classique, nous proposons un accompagnement dans la gestion des salaires (payroll), la planification successorale pour les dirigeants, le conseil en prévoyance professionnelle (LPP), et l'assistance administrative pour les sociétés étrangères souhaitant s'implanter en Suisse romande.</p>
+        <div class="ressource-item">
+          <div class="ressource-badge">🏔</div>
+          <div>
+            <h4>EasyGov — Portail PME</h4>
+            <p>Création d'entreprise, mutations RC, annonces officielles en ligne.</p>
+            <a href="https://www.easygov.swiss/easygov/#/fr" target="_blank" rel="noopener">easygov.swiss →</a>
+          </div>
+        </div>
+        <div class="ressource-item">
+          <div class="ressource-badge">🏦</div>
+          <div>
+            <h4>AFC — Administration fédérale des contributions</h4>
+            <p>Impôt fédéral direct, TVA, impôt anticipé, conventions de double imposition.</p>
+            <a href="https://www.estv.admin.ch/estv/fr/accueil.html" target="_blank" rel="noopener">estv.admin.ch →</a>
+          </div>
+        </div>
+        <div class="ressource-item">
+          <div class="ressource-badge">📘</div>
+          <div>
+            <h4>Guide Social Romand</h4>
+            <p>Fiches pratiques : prévoyance, assurances sociales, droit du travail, frontaliers.</p>
+            <a href="https://www.guidesocial.ch/" target="_blank" rel="noopener">guidesocial.ch →</a>
+          </div>
+        </div>
+        <div class="ressource-item">
+          <div class="ressource-badge">🏢</div>
+          <div>
+            <h4>République de Genève — Entreprises</h4>
+            <p>Création, fiscalité, aides, autorisations, registre du commerce cantonal.</p>
+            <a href="https://www.ge.ch/dossier/entreprises" target="_blank" rel="noopener">ge.ch/entreprises →</a>
+          </div>
+        </div>
+        <div class="ressource-item">
+          <div class="ressource-badge">📗</div>
+          <div>
+            <h4>Canton de Vaud — Entreprises</h4>
+            <p>Fiscalité vaudoise, aides aux entreprises, registre du commerce.</p>
+            <a href="https://www.vd.ch/themes/economie-et-innovation/entreprises" target="_blank" rel="noopener">vd.ch/entreprises →</a>
+          </div>
+        </div>
+        <div class="ressource-item">
+          <div class="ressource-badge">👷</div>
+          <div>
+            <h4>SECO — Portail PME</h4>
+            <p>Guides pratiques : finances, droit du travail, assurances, import/export.</p>
+            <a href="https://www.kmu.admin.ch/kmu/fr/home.html" target="_blank" rel="noopener">kmu.admin.ch →</a>
+          </div>
+        </div>
+        <div class="ressource-item">
+          <div class="ressource-badge">🛂</div>
+          <div>
+            <h4>SEM — Permis de travail</h4>
+            <p>Permis G, B, C, L. Conditions d'octroi, renouvellement, regroupement familial.</p>
+            <a href="https://www.sem.admin.ch/sem/fr/home.html" target="_blank" rel="noopener">sem.admin.ch →</a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="section-dark" id="expertise">
-        <div class="inner">
-            <h2>Expertise du cadre genevois</h2>
-            <div class="section-divider"></div>
-            <p>Le canton de Genève présente un environnement réglementaire et fiscal spécifique qui exige une expertise locale approfondie. Notre connaissance du terrain est un atout décisif pour nos clients.</p>
-            <h3>Le cadre fiscal genevois</h3>
-            <p>Genève applique un taux d'imposition effectif des bénéfices d'environ 14% pour les sociétés, l'un des plus compétitifs de Suisse. Le canton offre des déductions pour la recherche et le développement (patent box fédérale et cantonale), des régimes spécifiques pour les sociétés de négoce international, et un réseau de plus de 100 conventions de double imposition négociées par la Confédération.</p>
-            <h3>Obligations réglementaires</h3>
-            <p>Les entreprises établies à Genève sont soumises au droit fédéral (Code des obligations, Loi sur la TVA) et au droit cantonal genevois. Les fiduciaires opérant dans le canton doivent respecter la Loi sur le blanchiment d'argent (LBA) et être affiliées à un organisme d'autorégulation (OAR) reconnu par la FINMA. La révision des comptes est encadrée par la Loi sur la surveillance de la révision (LSR).</p>
-            <h3>L'écosystème économique lémanique</h3>
-            <p>Le bassin lémanique concentre plus de 1'200 multinationales, un secteur bancaire de premier plan, un pôle horloger mondial, et un écosystème de startups en forte croissance. Cette diversité économique requiert une fiduciaire capable d'accompagner des structures variées — de la startup deeptech au family office, de la PME industrielle à la société de trading de matières premières.</p>
-            <h3>Spécificités transfrontalières</h3>
-            <p>La proximité avec la France crée des enjeux spécifiques : imposition des travailleurs frontaliers, TVA sur les prestations transfrontalières, conventions fiscales franco-suisses, et structuration des sociétés avec des activités des deux côtés de la frontière. Notre expertise couvre ces problématiques transfrontalières quotidiennes.</p>
+    <!-- ── FAQ ── -->
+    <section id="faq" class="faq-section">
+      <h2 class="section-title">Questions Fréquentes</h2>
+      <p class="section-subtitle">Les réponses aux questions les plus posées par les entrepreneurs et indépendants de la région.</p>
+
+      <div class="faq-item">
+        <div class="faq-question">Quel est le taux d'imposition effectif des entreprises à Genève ?</div>
+        <div class="faq-answer">
+          Depuis la RFFA, le taux effectif d'imposition sur le bénéfice à Genève tourne autour de 13.99% (fédéral + cantonal + communal). Ce taux varie légèrement selon la commune. Pour les détails exacts, consultez l'<a href="https://www.ge.ch/impots" target="_blank" rel="noopener">Administration fiscale genevoise</a>. À titre de comparaison, le canton de Vaud applique un taux effectif d'environ 14%.
         </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Combien faut-il pour créer une Sàrl ?</div>
+        <div class="faq-answer">
+          Le capital minimum est de CHF 20'000 (entièrement libéré à la création). Comptez environ CHF 1'500 à 3'000 de frais de notaire et registre du commerce. La procédure peut être lancée en ligne via <a href="https://www.easygov.swiss/easygov/#/fr" target="_blank" rel="noopener">EasyGov</a>. La base légale se trouve aux articles 772 et suivants du <a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr" target="_blank" rel="noopener">Code des obligations</a>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Comment fonctionne l'imposition des frontaliers à Genève ?</div>
+        <div class="faq-answer">
+          Les frontaliers résidant en France et travaillant dans le canton de Genève sont imposés à la source en Suisse. Genève rétrocède une partie de l'impôt à la France (actuellement 3.5% de la masse salariale brute). Le frontalier est ensuite imposé en France sur ses revenus mondiaux, avec un crédit d'impôt. Détails sur <a href="https://www.ge.ch/travailler-tant-frontaliere-frontalier" target="_blank" rel="noopener">ge.ch</a>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">À partir de quand suis-je assujetti à la TVA ?</div>
+        <div class="faq-answer">
+          L'assujettissement est obligatoire dès que votre chiffre d'affaires annuel dépasse CHF 100'000. En dessous, l'inscription est volontaire mais peut être avantageuse (récupération de la TVA sur les achats). Le taux normal est de 8.1%, le taux réduit de 2.6%. Informations complètes sur le <a href="https://www.estv.admin.ch/estv/fr/accueil/taxe-sur-la-valeur-ajoutee.html" target="_blank" rel="noopener">portail TVA de l'AFC</a>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Quelle est la différence entre le 2ème et le 3ème pilier ?</div>
+        <div class="faq-answer">
+          Le 2ème pilier (LPP) est la prévoyance professionnelle obligatoire, financée par l'employeur et l'employé. Le 3ème pilier A est volontaire et offre une déduction fiscale (max CHF 7'056/an pour salariés en 2024). Pour les indépendants sans 2ème pilier, le plafond monte à 20% du revenu net (max CHF 35'280). Détails sur le <a href="https://www.guidesocial.ch/recherche/fiche/3eme-pilier-a-192" target="_blank" rel="noopener">Guide Social Romand</a>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Dois-je faire réviser mes comptes ?</div>
+        <div class="faq-answer">
+          Ça dépend de votre taille. Les SA et Sàrl qui dépassent deux des trois seuils suivants sont soumises au contrôle ordinaire : bilan > CHF 20 mio, CA > CHF 40 mio, > 250 employés. En dessous, c'est un contrôle restreint, et les entreprises de moins de 10 employés peuvent y renoncer (opting-out). Art. 727 ss. du <a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/fr" target="_blank" rel="noopener">CO</a>.
+        </div>
+      </div>
     </section>
 
-    <section class="section" id="faq">
-        <h2>Questions fréquentes</h2>
-        <div class="section-divider"></div>
-        <p>Les réponses aux questions les plus courantes sur les services fiduciaires en Suisse et à Genève.</p>
-        <div class="faq-item">
-            <h4>Qu'est-ce qu'une fiduciaire en Suisse ?</h4>
-            <p>Une fiduciaire suisse est une société spécialisée dans la gestion comptable, l'audit, le conseil fiscal et la structuration d'entreprise. Elle accompagne les entreprises et les particuliers dans leurs obligations légales et leur optimisation financière, en conformité avec le droit fédéral et cantonal suisse.</p>
+    <!-- ── DIAGNOSTIC CTA ── -->
+    <section id="diagnostic" class="diagnostic-section">
+      <h2>Diagnostic Fiscal &amp; Juridique Gratuit</h2>
+      <p>Notre assistant analyse votre situation en 3 minutes et vous oriente vers les bonnes ressources et les bons experts du bassin lémanique.</p>
+      <a href="#chatbase-widget" class="diagnostic-cta">Lancer mon diagnostic →</a>
+      <div class="diagnostic-steps">
+        <div class="diagnostic-step">
+          <div class="step-num">1</div>
+          <span>Quelques questions</span>
         </div>
-        <div class="faq-item">
-            <h4>Comment choisir une fiduciaire à Genève ?</h4>
-            <p>Privilégiez une fiduciaire disposant d'une solide connaissance du cadre fiscal genevois, une expérience vérifiable avec des entreprises de votre secteur, une transparence sur les honoraires, et idéalement une accréditation ou affiliation à un organisme reconnu (Fiduciaire Suisse, EXPERTsuisse). La proximité géographique et la réactivité sont également des critères importants.</p>
+        <div class="diagnostic-step">
+          <div class="step-num">2</div>
+          <span>Fiche personnalisée</span>
         </div>
-        <div class="faq-item">
-            <h4>Quels sont les avantages fiscaux pour les entreprises à Genève ?</h4>
-            <p>Le canton de Genève offre un cadre fiscal compétitif : taux d'imposition effectif d'environ 14% sur les bénéfices, déductions R&D (patent box), conventions de double imposition avec plus de 100 pays, et régimes particuliers pour les sociétés holding et de négoce international.</p>
+        <div class="diagnostic-step">
+          <div class="step-num">3</div>
+          <span>Orientation expert</span>
         </div>
-        <div class="faq-item">
-            <h4>Quelle est la différence entre une fiduciaire et un expert-comptable ?</h4>
-            <p>En Suisse, la fiduciaire englobe la comptabilité, l'audit, le conseil fiscal et la création d'entreprise. L'expert-comptable (expert-réviseur) est une qualification spécifique réglementée par l'ASR, qui autorise la révision des comptes annuels.</p>
-        </div>
-        <div class="faq-item">
-            <h4>Combien coûtent les services d'une fiduciaire ?</h4>
-            <p>Pour une PME genevoise, la tenue de comptabilité se situe entre 200 et 500 CHF par mois. Un audit légal commence autour de 3'000 CHF. Le conseil fiscal ponctuel se facture entre 200 et 400 CHF de l'heure. Les forfaits annuels offrent une meilleure prévisibilité.</p>
-        </div>
-        <div class="faq-item">
-            <h4>Quelles sont les obligations comptables en Suisse ?</h4>
-            <p>Toute entreprise inscrite au registre du commerce doit tenir une comptabilité conforme au Code des obligations (art. 957-963), établir des comptes annuels, et selon sa taille, soumettre ses comptes à un contrôle ordinaire ou restreint par un organe de révision agréé.</p>
-        </div>
-        <div class="faq-item">
-            <h4>Comment créer une entreprise à Genève ?</h4>
-            <p>Création d'une Sàrl (capital minimum 20'000 CHF) ou SA (100'000 CHF, dont 50'000 libérés) : rédaction des statuts, compte de consignation, acte notarié, inscription au registre du commerce, affiliation AVS/AI. Une fiduciaire gère l'ensemble du processus.</p>
-        </div>
-        <div class="faq-item">
-            <h4>Qu'est-ce que le contrôle restreint (opting-out) ?</h4>
-            <p>Les entreprises de moins de 10 employés peuvent renoncer au contrôle restreint si tous les associés y consentent. Cette option allège les obligations mais ne dispense pas de tenir une comptabilité conforme.</p>
-        </div>
-        <div class="faq-item">
-            <h4>La FINMA réglemente-t-elle les fiduciaires ?</h4>
-            <p>Les fiduciaires sont soumises à la LBA et doivent être affiliées à un OAR reconnu par la FINMA. Elles ont des obligations de diligence en vérification d'identité et signalement de transactions suspectes.</p>
-        </div>
-        <div class="faq-item">
-            <h4>Peut-on changer de fiduciaire en cours d'exercice ?</h4>
-            <p>Oui, à tout moment. Le processus implique la résiliation du mandat, le transfert des documents, et la reprise par la nouvelle fiduciaire. Un changement en début d'exercice simplifie la transition.</p>
-        </div>
+      </div>
     </section>
 
-    <section class="contact-section" id="contact">
-        <div class="inner">
-            <h2>Contact</h2>
-            <div class="section-divider" style="margin: 0 auto 30px;"></div>
-            <p style="color: var(--text-light);">Prenez contact pour un premier échange confidentiel.<br>Nous répondons sous 24 heures ouvrées.</p>
-            <div class="contact-info">
-                <p><strong>Adresse :</strong> Genève, Suisse</p>
-                <p><strong>Email :</strong> contact@suisse-fiduciaire.com</p>
-                <p><strong>Horaires :</strong> Lundi – Vendredi, 9h00 – 18h00</p>
-                <p><strong>Zone d'intervention :</strong> Genève, Lausanne, Nyon, bassin lémanique</p>
-            </div>
-        </div>
-    </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2026 Suisse Fiduciaire — Genève, Suisse — Tous droits réservés</p>
-    </footer>
+  <!-- ════ FOOTER ════ -->
+  <footer class="footer">
+    <div class="footer-brand">Suisse Fiduciaire</div>
+    <p>Hub de ressources juridiques et fiscales pour le bassin lémanique.<br>
+    Les informations présentées sont à titre indicatif. Consultez un professionnel pour votre situation spécifique.<br>
+    Toutes les sources renvoient vers les portails officiels fédéraux et cantonaux.</p>
+    <p style="margin-top: 16px;">
+      <a href="https://suisse-fiduciaire.com">Accueil</a> · 
+      <a href="#fiches">Fiches</a> · 
+      <a href="#ressources">Ressources</a> · 
+      <a href="#faq">FAQ</a> · 
+      <a href="#diagnostic">Diagnostic</a>
+    </p>
+    <p style="margin-top: 20px; font-size: 0.75rem;">© 2026 Suisse Fiduciaire — Leman Digital Asset</p>
+  </footer>
 
-    <!-- Chatbase Agent Widget -->
+  <!-- ════ FAQ TOGGLE SCRIPT ════ -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+
+  <!-- ════ CHATBASE WIDGET PLACEHOLDER ════ -->
+  <!-- 
+    INTÉGRATION CHATBASE : 
+    Remplacer ce commentaire par le script Chatbase avec le bot ID.
+    Le flow de l'agent est défini dans le prompt Chatbase séparé.
+    
     <script>
-    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="qeA-Jg6N-j2MHtO6_D5cj";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+      window.embeddedChatbotConfig = {
+        chatbotId: "VOTRE_BOT_ID",
+        domain: "www.chatbase.co"
+      }
     </script>
+    <script src="https://www.chatbase.co/embed.min.js" defer></script>
+  -->
 
 </body>
 </html>
