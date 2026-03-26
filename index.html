@@ -317,6 +317,76 @@
     }
     .myrtille-footer a { color: var(--myrtille); text-decoration: none; font-weight: 500; }
 
+    /* ══════════════════════════════════════════════════════════════════
+       MYRTILLE CONSENT SCREEN
+    ══════════════════════════════════════════════════════════════════ */
+    .myrtille-consent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      text-align: center;
+      flex: 1;
+      background: #f9fafb;
+    }
+    .myrtille-consent .consent-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--myrtille) 0%, var(--myrtille-dark) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);
+    }
+    .myrtille-consent h4 {
+      font-size: 1.1rem;
+      color: var(--ink);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .myrtille-consent p {
+      font-size: 0.85rem;
+      color: var(--gris);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      max-width: 320px;
+    }
+    .myrtille-consent .consent-link {
+      color: var(--myrtille);
+      text-decoration: underline;
+    }
+    .myrtille-consent .consent-btn {
+      background: var(--myrtille);
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .myrtille-consent .consent-btn:hover {
+      background: var(--myrtille-dark);
+      transform: translateY(-1px);
+    }
+    .myrtille-consent .consent-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Hide chat content until consent */
+    .myrtille-chat-content { display: none; flex-direction: column; flex: 1; }
+    .myrtille-chat-content.visible { display: flex; }
+    .myrtille-consent.hidden { display: none; }
+
     /* ── HEADER ── */
     .header {
       background: var(--bleu);
@@ -674,22 +744,37 @@
         </div>
         <button class="close" onclick="closeMyrtille()">×</button>
       </div>
-      <div class="myrtille-messages" id="myrtilleMessages">
-        <div class="msg assistant">
-          Bonjour ! Je suis Myrtille, votre assistante pour les questions juridiques et fiscales du bassin lémanique. 🫐<br><br>
-          Comment puis-je vous aider aujourd'hui ?
-        </div>
-      </div>
-      <div class="myrtille-input">
-        <input type="text" id="myrtilleInput" placeholder="Posez votre question..." onkeypress="handleKeyPress(event)">
-        <button onclick="sendMessage()" id="sendBtn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-          </svg>
+      
+      <!-- CONSENT SCREEN -->
+      <div class="myrtille-consent" id="myrtilleConsent">
+        <div class="consent-icon">🔒</div>
+        <h4>Vos données sont protégées</h4>
+        <p>Vos échanges avec Myrtille sont confidentiels et sécurisés. En continuant, vous acceptez notre <a href="confidentialite.html" class="consent-link" target="_blank">politique de confidentialité</a>.</p>
+        <button class="consent-btn" onclick="acceptConsent()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+          Accepter et continuer
         </button>
       </div>
-      <div class="myrtille-footer">
-        🫐 Myrtille by <a href="https://suisse-fiduciaire.com">LDA</a> — Propulsé par IA
+      
+      <!-- CHAT CONTENT (hidden until consent) -->
+      <div class="myrtille-chat-content" id="myrtilleChatContent">
+        <div class="myrtille-messages" id="myrtilleMessages">
+          <div class="msg assistant">
+            Bonjour ! Je suis Myrtille, votre assistante pour les questions juridiques et fiscales du bassin lémanique. 🫐<br><br>
+            Comment puis-je vous aider aujourd'hui ?
+          </div>
+        </div>
+        <div class="myrtille-input">
+          <input type="text" id="myrtilleInput" placeholder="Posez votre question..." onkeypress="handleKeyPress(event)">
+          <button onclick="sendMessage()" id="sendBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="myrtille-footer">
+          🫐 Myrtille by <a href="https://suisse-fiduciaire.com">LDA</a> — <a href="confidentialite.html" target="_blank">Confidentialité</a>
+        </div>
       </div>
     </div>
   </div>
@@ -890,7 +975,7 @@
     <div class="footer-brand">Suisse Fiduciaire</div>
     <p>Hub de ressources juridiques et fiscales pour le bassin lémanique.<br>Informations à titre indicatif. Consultez un professionnel pour votre situation.</p>
     <p style="margin-top: 16px;">
-      <a href="https://suisse-fiduciaire.com">Accueil</a> · <a href="#fiches">Fiches</a> · <a href="#ressources">Ressources</a> · <a href="#faq">FAQ</a> · <a href="javascript:void(0)" onclick="openMyrtille()">Diagnostic</a>
+      <a href="https://suisse-fiduciaire.com">Accueil</a> · <a href="#fiches">Fiches</a> · <a href="#ressources">Ressources</a> · <a href="#faq">FAQ</a> · <a href="javascript:void(0)" onclick="openMyrtille()">Diagnostic</a> · <a href="confidentialite.html">Confidentialité</a>
     </p>
     <p style="margin-top: 20px; font-size: 0.75rem;">© 2026 Suisse Fiduciaire — Leman Digital Asset</p>
   </footer>
@@ -907,17 +992,35 @@
 
     const API_URL = 'https://web-production-4e8e0.up.railway.app';
     const HUB = 'suisse-fiduciaire';
+    const CONSENT_KEY = 'myrtille_consent_' + HUB;
     let sessionId = 'session_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+
+    function checkConsent() {
+      return localStorage.getItem(CONSENT_KEY) === 'accepted';
+    }
+
+    function acceptConsent() {
+      localStorage.setItem(CONSENT_KEY, 'accepted');
+      document.getElementById('myrtilleConsent').classList.add('hidden');
+      document.getElementById('myrtilleChatContent').classList.add('visible');
+      document.getElementById('myrtilleInput').focus();
+    }
 
     function openMyrtille() {
       document.getElementById('myrtilleOverlay').classList.add('open');
-      document.getElementById('myrtilleInput').focus();
+      if (checkConsent()) {
+        document.getElementById('myrtilleConsent').classList.add('hidden');
+        document.getElementById('myrtilleChatContent').classList.add('visible');
+        document.getElementById('myrtilleInput').focus();
+      }
     }
+
     function closeMyrtille(event) {
       if (!event || event.target === document.getElementById('myrtilleOverlay')) {
         document.getElementById('myrtilleOverlay').classList.remove('open');
       }
     }
+
     function handleKeyPress(event) { if (event.key === 'Enter') sendMessage(); }
 
     async function sendMessage() {
@@ -947,6 +1050,7 @@
       sendBtn.disabled = false;
       messagesDiv.scrollTop = messagesDiv.scrollHeight;
     }
+
     function escapeHtml(text) { const div = document.createElement('div'); div.textContent = text; return div.innerHTML; }
     function formatResponse(text) { return text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>'); }
   </script>
