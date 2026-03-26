@@ -72,7 +72,7 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
+    html { overflow-x: hidden; }
     body {
       font-family: 'Satoshi', -apple-system, sans-serif;
       background: var(--paper);
@@ -80,11 +80,9 @@
       line-height: 1.65;
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    /* ══════════════════════════════════════════════════════════════════
-       GLASS MYRTILLE BUTTON - Style Apple iOS
-    ══════════════════════════════════════════════════════════════════ */
     .glass-myrtille-cta {
       display: inline-flex;
       align-items: center;
@@ -110,9 +108,7 @@
     .glass-myrtille-cta::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 50%;
       background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 100%);
       pointer-events: none;
@@ -123,12 +119,9 @@
       box-shadow: 0 0 30px rgba(124, 58, 237, 0.25), 0 12px 40px rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
     }
-    .glass-myrtille-cta .berry {
-      font-size: 1.2rem;
-    }
+    .glass-myrtille-cta .berry { font-size: 1.2rem; }
     .glass-myrtille-cta .pulse-dot {
-      width: 8px;
-      height: 8px;
+      width: 8px; height: 8px;
       background: #4ade80;
       border-radius: 50%;
       animation: pulse 2s infinite;
@@ -138,8 +131,6 @@
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.5; transform: scale(1.3); }
     }
-
-    /* Glass button for diagnostic section (darker bg) */
     .glass-myrtille-cta-dark {
       background: rgba(124, 58, 237, 0.35);
       border-color: rgba(124, 58, 237, 0.5);
@@ -149,9 +140,6 @@
       border-color: rgba(124, 58, 237, 0.7);
     }
 
-    /* ══════════════════════════════════════════════════════════════════
-       MYRTILLE CHAT MODAL
-    ══════════════════════════════════════════════════════════════════ */
     .myrtille-overlay {
       display: none;
       position: fixed;
@@ -191,8 +179,7 @@
       gap: 12px;
     }
     .myrtille-header .avatar {
-      width: 44px;
-      height: 44px;
+      width: 44px; height: 44px;
       background: rgba(255,255,255,0.2);
       border-radius: 50%;
       display: flex;
@@ -200,22 +187,14 @@
       justify-content: center;
       font-size: 1.5rem;
     }
-    .myrtille-header .info h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-    .myrtille-header .info span {
-      font-size: 0.75rem;
-      opacity: 0.8;
-    }
+    .myrtille-header .info h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 2px; }
+    .myrtille-header .info span { font-size: 0.75rem; opacity: 0.8; }
     .myrtille-header .close {
       margin-left: auto;
       background: rgba(255,255,255,0.2);
       border: none;
       color: white;
-      width: 34px;
-      height: 34px;
+      width: 34px; height: 34px;
       border-radius: 50%;
       cursor: pointer;
       font-size: 1.3rem;
@@ -261,8 +240,7 @@
     }
     .msg.typing .dots { display: flex; gap: 5px; }
     .msg.typing .dot {
-      width: 8px;
-      height: 8px;
+      width: 8px; height: 8px;
       background: var(--myrtille);
       border-radius: 50%;
       animation: typing 1.4s infinite;
@@ -295,8 +273,7 @@
       background: var(--myrtille);
       color: white;
       border: none;
-      width: 46px;
-      height: 46px;
+      width: 46px; height: 46px;
       border-radius: 50%;
       cursor: pointer;
       display: flex;
@@ -317,9 +294,6 @@
     }
     .myrtille-footer a { color: var(--myrtille); text-decoration: none; font-weight: 500; }
 
-    /* ══════════════════════════════════════════════════════════════════
-       MYRTILLE CONSENT SCREEN
-    ══════════════════════════════════════════════════════════════════ */
     .myrtille-consent {
       display: flex;
       flex-direction: column;
@@ -331,8 +305,7 @@
       background: #f9fafb;
     }
     .myrtille-consent .consent-icon {
-      width: 72px;
-      height: 72px;
+      width: 72px; height: 72px;
       background: linear-gradient(135deg, var(--myrtille) 0%, var(--myrtille-dark) 100%);
       border-radius: 50%;
       display: flex;
@@ -342,23 +315,9 @@
       margin-bottom: 20px;
       box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);
     }
-    .myrtille-consent h4 {
-      font-size: 1.1rem;
-      color: var(--ink);
-      margin-bottom: 12px;
-      font-weight: 700;
-    }
-    .myrtille-consent p {
-      font-size: 0.85rem;
-      color: var(--gris);
-      line-height: 1.6;
-      margin-bottom: 24px;
-      max-width: 320px;
-    }
-    .myrtille-consent .consent-link {
-      color: var(--myrtille);
-      text-decoration: underline;
-    }
+    .myrtille-consent h4 { font-size: 1.1rem; color: var(--ink); margin-bottom: 12px; font-weight: 700; }
+    .myrtille-consent p { font-size: 0.85rem; color: var(--gris); line-height: 1.6; margin-bottom: 24px; max-width: 320px; }
+    .myrtille-consent .consent-link { color: var(--myrtille); text-decoration: underline; }
     .myrtille-consent .consent-btn {
       background: var(--myrtille);
       color: white;
@@ -373,21 +332,12 @@
       align-items: center;
       gap: 8px;
     }
-    .myrtille-consent .consent-btn:hover {
-      background: var(--myrtille-dark);
-      transform: translateY(-1px);
-    }
-    .myrtille-consent .consent-btn svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    /* Hide chat content until consent */
+    .myrtille-consent .consent-btn:hover { background: var(--myrtille-dark); transform: translateY(-1px); }
+    .myrtille-consent .consent-btn svg { width: 18px; height: 18px; }
     .myrtille-chat-content { display: none; flex-direction: column; flex: 1; }
     .myrtille-chat-content.visible { display: flex; }
     .myrtille-consent.hidden { display: none; }
 
-    /* ── HEADER ── */
     .header {
       background: var(--bleu);
       color: white;
@@ -421,7 +371,6 @@
     }
     nav a:hover { color: var(--or-light); }
 
-    /* ── HERO ── */
     .hero {
       background: linear-gradient(135deg, var(--bleu) 0%, #0f2440 100%);
       color: white;
@@ -455,40 +404,19 @@
       position: relative;
     }
 
-    /* ── TRUST BAR ── */
     .trust-bar {
       background: var(--cream);
       border-bottom: 1px solid var(--border);
       padding: 16px 24px;
       text-align: center;
     }
-    .trust-bar p {
-      font-size: 0.82rem;
-      color: var(--gris);
-      max-width: var(--max-w);
-      margin: 0 auto;
-    }
+    .trust-bar p { font-size: 0.82rem; color: var(--gris); max-width: var(--max-w); margin: 0 auto; }
     .trust-bar strong { color: var(--bleu); font-weight: 700; }
 
-    /* ── MAIN ── */
-    .main {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 48px 24px;
-    }
-    .section-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.8rem;
-      color: var(--bleu);
-      margin-bottom: 8px;
-    }
-    .section-subtitle {
-      color: var(--gris);
-      font-size: 0.95rem;
-      margin-bottom: 36px;
-    }
+    .main { max-width: var(--max-w); margin: 0 auto; padding: 48px 24px; }
+    .section-title { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--bleu); margin-bottom: 8px; }
+    .section-subtitle { color: var(--gris); font-size: 0.95rem; margin-bottom: 36px; }
 
-    /* ── FICHES GRID ── */
     .fiches-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -514,41 +442,17 @@
       transition: transform var(--transition);
       transform-origin: top;
     }
-    .fiche-card:hover {
-      box-shadow: var(--shadow-hover);
-      transform: translateY(-3px);
-    }
+    .fiche-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
     .fiche-card:hover::before { transform: scaleY(1); }
     .fiche-icon { font-size: 1.6rem; margin-bottom: 14px; display: block; }
-    .fiche-card h3 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.2rem;
-      color: var(--bleu);
-      margin-bottom: 10px;
-    }
-    .fiche-card p {
-      font-size: 0.9rem;
-      color: var(--gris);
-      line-height: 1.55;
-      margin-bottom: 16px;
-    }
+    .fiche-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--bleu); margin-bottom: 10px; }
+    .fiche-card p { font-size: 0.9rem; color: var(--gris); line-height: 1.55; margin-bottom: 16px; }
     .fiche-links { list-style: none; margin: 0 0 18px; }
-    .fiche-links li {
-      padding: 6px 0;
-      border-bottom: 1px solid #f0ece4;
-      font-size: 0.85rem;
-    }
+    .fiche-links li { padding: 6px 0; border-bottom: 1px solid #f0ece4; font-size: 0.85rem; }
     .fiche-links li:last-child { border-bottom: none; }
-    .fiche-links a {
-      color: var(--bleu-light);
-      text-decoration: none;
-      font-weight: 500;
-    }
+    .fiche-links a { color: var(--bleu-light); text-decoration: none; font-weight: 500; }
     .fiche-links a:hover { color: #c41e3a; }
-    .fiche-links .source {
-      color: var(--gris-light);
-      font-size: 0.78rem;
-    }
+    .fiche-links .source { color: var(--gris-light); font-size: 0.78rem; }
     .fiche-cta {
       display: inline-flex;
       align-items: center;
@@ -565,7 +469,6 @@
     }
     .fiche-cta:hover { background: var(--bleu-light); }
 
-    /* ── RESSOURCES ── */
     .ressources-section {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -588,10 +491,7 @@
       border-radius: var(--radius);
       transition: all var(--transition);
     }
-    .ressource-item:hover {
-      border-color: var(--or);
-      background: #fdfcf9;
-    }
+    .ressource-item:hover { border-color: var(--or); background: #fdfcf9; }
     .ressource-badge {
       flex-shrink: 0;
       width: 42px; height: 42px;
@@ -606,7 +506,6 @@
     .ressource-item p { font-size: 0.82rem; color: var(--gris); margin-bottom: 6px; }
     .ressource-item a { color: var(--bleu-light); text-decoration: none; font-size: 0.8rem; font-weight: 600; }
 
-    /* ── FAQ ── */
     .faq-section { margin-bottom: 64px; }
     .faq-item { border-bottom: 1px solid var(--border); padding: 22px 0; }
     .faq-item:first-child { border-top: 1px solid var(--border); }
@@ -619,12 +518,7 @@
       justify-content: space-between;
       align-items: center;
     }
-    .faq-question::after {
-      content: '+';
-      font-size: 1.3rem;
-      color: var(--or);
-      transition: transform var(--transition);
-    }
+    .faq-question::after { content: '+'; font-size: 1.3rem; color: var(--or); transition: transform var(--transition); }
     .faq-item.open .faq-question::after { transform: rotate(45deg); }
     .faq-answer {
       max-height: 0;
@@ -637,7 +531,6 @@
     .faq-item.open .faq-answer { max-height: 500px; padding-top: 14px; }
     .faq-answer a { color: var(--bleu-light); font-weight: 500; }
 
-    /* ── DIAGNOSTIC CTA SECTION ── */
     .diagnostic-section {
       background: linear-gradient(135deg, var(--bleu) 0%, #0f2440 100%);
       color: white;
@@ -656,26 +549,9 @@
       background: radial-gradient(ellipse, rgba(184,134,11,0.1) 0%, transparent 70%);
       pointer-events: none;
     }
-    .diagnostic-section h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.8rem;
-      margin-bottom: 14px;
-      position: relative;
-    }
-    .diagnostic-section p {
-      color: rgba(255,255,255,0.75);
-      max-width: 540px;
-      margin: 0 auto 28px;
-      font-size: 0.95rem;
-      position: relative;
-    }
-    .diagnostic-steps {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 32px;
-      position: relative;
-    }
+    .diagnostic-section h2 { font-family: 'DM Serif Display', serif; font-size: 1.8rem; margin-bottom: 14px; position: relative; }
+    .diagnostic-section p { color: rgba(255,255,255,0.75); max-width: 540px; margin: 0 auto 28px; font-size: 0.95rem; position: relative; }
+    .diagnostic-steps { display: flex; justify-content: center; gap: 40px; margin-top: 32px; position: relative; }
     .diagnostic-step { text-align: center; }
     .diagnostic-step .step-num {
       width: 36px; height: 36px;
@@ -691,7 +567,6 @@
     }
     .diagnostic-step span { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
 
-    /* ── FOOTER ── */
     .footer {
       background: var(--ink);
       color: rgba(255,255,255,0.5);
@@ -701,14 +576,8 @@
       line-height: 1.7;
     }
     .footer a { color: var(--or-light); text-decoration: none; }
-    .footer-brand {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.1rem;
-      color: white;
-      margin-bottom: 10px;
-    }
+    .footer-brand { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: white; margin-bottom: 10px; }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .fiches-grid, .ressources-grid { grid-template-columns: 1fr; }
       .diagnostic-steps { flex-direction: column; gap: 16px; }
@@ -717,12 +586,10 @@
       .diagnostic-section { padding: 40px 24px; }
       nav { display: none; }
       .glass-myrtille-cta { padding: 14px 24px; font-size: 0.9rem; }
+      .myrtille-chat { width: 100%; max-width: 100%; height: 100%; max-height: 100%; border-radius: 0; }
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .fiche-card { animation: fadeUp 0.5s ease both; }
     .fiche-card:nth-child(2) { animation-delay: 0.08s; }
     .fiche-card:nth-child(3) { animation-delay: 0.16s; }
@@ -733,7 +600,6 @@
 </head>
 <body>
 
-  <!-- ════ MYRTILLE CHAT OVERLAY ════ -->
   <div class="myrtille-overlay" id="myrtilleOverlay" onclick="closeMyrtille(event)">
     <div class="myrtille-chat" onclick="event.stopPropagation()">
       <div class="myrtille-header">
@@ -744,8 +610,6 @@
         </div>
         <button class="close" onclick="closeMyrtille()">×</button>
       </div>
-      
-      <!-- CONSENT SCREEN -->
       <div class="myrtille-consent" id="myrtilleConsent">
         <div class="consent-icon">🔒</div>
         <h4>Vos données sont protégées</h4>
@@ -755,31 +619,19 @@
           Accepter et continuer
         </button>
       </div>
-      
-      <!-- CHAT CONTENT (hidden until consent) -->
       <div class="myrtille-chat-content" id="myrtilleChatContent">
         <div class="myrtille-messages" id="myrtilleMessages">
-          <div class="msg assistant">
-            Bonjour ! Je suis Myrtille, votre assistante pour les questions juridiques et fiscales du bassin lémanique. 🫐<br><br>
-            Comment puis-je vous aider aujourd'hui ?
-          </div>
+          <div class="msg assistant">Bonjour ! Je suis Myrtille, votre assistante pour les questions juridiques et fiscales du bassin lémanique. 🫐<br><br>Comment puis-je vous aider aujourd'hui ?</div>
         </div>
         <div class="myrtille-input">
           <input type="text" id="myrtilleInput" placeholder="Posez votre question..." onkeypress="handleKeyPress(event)">
-          <button onclick="sendMessage()" id="sendBtn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-            </svg>
-          </button>
+          <button onclick="sendMessage()" id="sendBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
         </div>
-        <div class="myrtille-footer">
-          🫐 Myrtille by <a href="https://suisse-fiduciaire.com">LDA</a> — <a href="confidentialite.html" target="_blank">Confidentialité</a>
-        </div>
+        <div class="myrtille-footer">🫐 Myrtille by <a href="https://suisse-fiduciaire.com">LDA</a> — <a href="confidentialite.html" target="_blank">Confidentialité</a></div>
       </div>
     </div>
   </div>
 
-  <!-- ════ HEADER ════ -->
   <header class="header">
     <div class="header-inner">
       <a href="https://suisse-fiduciaire.com" class="logo">Suisse<span>Fiduciaire</span></a>
@@ -792,29 +644,24 @@
     </div>
   </header>
 
-  <!-- ════ HERO ════ -->
   <section class="hero">
     <h1>Hub Juridique &amp; Fiscal<br>du <em>Bassin Lémanique</em></h1>
     <p>Toutes les ressources officielles pour créer, gérer et optimiser votre activité en Suisse romande. Liens directs vers les sources fédérales et cantonales.</p>
     <button class="glass-myrtille-cta" onclick="openMyrtille()">
       <span class="berry">🫐</span>
-      Discuter avec Myrtille
+      Discutez en avec Myrtille 🫐
       <span class="pulse-dot"></span>
     </button>
   </section>
 
-  <!-- ════ TRUST BAR ════ -->
   <div class="trust-bar">
     <p>Sources exclusives : <strong>Fedlex</strong> · <strong>ge.ch</strong> · <strong>vd.ch</strong> · <strong>EasyGov</strong> · <strong>AFC</strong> · <strong>SECO</strong></p>
   </div>
 
-  <!-- ════ MAIN CONTENT ════ -->
   <main class="main">
-
     <section id="fiches">
       <h2 class="section-title">Fiches Métier</h2>
       <p class="section-subtitle">Six thématiques clés pour les professionnels et indépendants du bassin lémanique, avec liens directs vers les textes officiels.</p>
-
       <div class="fiches-grid">
         <article class="fiche-card">
           <span class="fiche-icon">🏛</span>
@@ -827,7 +674,6 @@
           </ul>
           <button class="fiche-cta" onclick="openMyrtille()">Quelle forme pour vous ? →</button>
         </article>
-
         <article class="fiche-card">
           <span class="fiche-icon">📊</span>
           <h3>Fiscalité Cantonale GE/VD</h3>
@@ -839,7 +685,6 @@
           </ul>
           <button class="fiche-cta" onclick="openMyrtille()">Comparer GE vs VD →</button>
         </article>
-
         <article class="fiche-card">
           <span class="fiche-icon">🛂</span>
           <h3>Statut Frontalier &amp; Permis G</h3>
@@ -851,7 +696,6 @@
           </ul>
           <button class="fiche-cta" onclick="openMyrtille()">Vérifier votre situation →</button>
         </article>
-
         <article class="fiche-card">
           <span class="fiche-icon">🧾</span>
           <h3>TVA Suisse &amp; Assujettissement</h3>
@@ -863,7 +707,6 @@
           </ul>
           <button class="fiche-cta" onclick="openMyrtille()">Suis-je assujetti ? →</button>
         </article>
-
         <article class="fiche-card">
           <span class="fiche-icon">🛡</span>
           <h3>Prévoyance &amp; Assurances Sociales</h3>
@@ -875,7 +718,6 @@
           </ul>
           <button class="fiche-cta" onclick="openMyrtille()">Optimiser ma prévoyance →</button>
         </article>
-
         <article class="fiche-card">
           <span class="fiche-icon">📁</span>
           <h3>Comptabilité &amp; Obligations Légales</h3>
@@ -894,65 +736,25 @@
       <h2 class="section-title">Ressources Officielles</h2>
       <p class="section-subtitle">Accès direct aux portails fédéraux, cantonaux et professionnels de référence.</p>
       <div class="ressources-grid">
-        <div class="ressource-item">
-          <div class="ressource-badge">⚖️</div>
-          <div><h4>Fedlex — Recueil du droit fédéral</h4><p>Tous les textes de loi fédéraux.</p><a href="https://www.fedlex.admin.ch/fr/home" target="_blank">fedlex.admin.ch →</a></div>
-        </div>
-        <div class="ressource-item">
-          <div class="ressource-badge">🏔</div>
-          <div><h4>EasyGov — Portail PME</h4><p>Création d'entreprise, mutations RC.</p><a href="https://www.easygov.swiss/easygov/#/fr" target="_blank">easygov.swiss →</a></div>
-        </div>
-        <div class="ressource-item">
-          <div class="ressource-badge">🏦</div>
-          <div><h4>AFC — Contributions fédérales</h4><p>Impôt fédéral direct, TVA.</p><a href="https://www.estv.admin.ch/estv/fr/accueil.html" target="_blank">estv.admin.ch →</a></div>
-        </div>
-        <div class="ressource-item">
-          <div class="ressource-badge">🏢</div>
-          <div><h4>République de Genève</h4><p>Création, fiscalité, aides.</p><a href="https://www.ge.ch/dossier/entreprises" target="_blank">ge.ch/entreprises →</a></div>
-        </div>
-        <div class="ressource-item">
-          <div class="ressource-badge">📗</div>
-          <div><h4>Canton de Vaud</h4><p>Fiscalité vaudoise, aides.</p><a href="https://www.vd.ch/entreprises" target="_blank">vd.ch/entreprises →</a></div>
-        </div>
-        <div class="ressource-item">
-          <div class="ressource-badge">👷</div>
-          <div><h4>SECO — Portail PME</h4><p>Guides pratiques.</p><a href="https://www.kmu.admin.ch/kmu/fr/home.html" target="_blank">kmu.admin.ch →</a></div>
-        </div>
-        <div class="ressource-item">
-          <div class="ressource-badge">🛂</div>
-          <div><h4>SEM — Permis de travail</h4><p>Permis G, B, C, L.</p><a href="https://www.sem.admin.ch/sem/fr/home.html" target="_blank">sem.admin.ch →</a></div>
-        </div>
-        <div class="ressource-item">
-          <div class="ressource-badge">🛡</div>
-          <div><h4>OFAS — Assurances sociales</h4><p>AVS, AI, prévoyance.</p><a href="https://www.bsv.admin.ch/bsv/fr/home.html" target="_blank">bsv.admin.ch →</a></div>
-        </div>
+        <div class="ressource-item"><div class="ressource-badge">⚖️</div><div><h4>Fedlex — Recueil du droit fédéral</h4><p>Tous les textes de loi fédéraux.</p><a href="https://www.fedlex.admin.ch/fr/home" target="_blank">fedlex.admin.ch →</a></div></div>
+        <div class="ressource-item"><div class="ressource-badge">🏔</div><div><h4>EasyGov — Portail PME</h4><p>Création d'entreprise, mutations RC.</p><a href="https://www.easygov.swiss/easygov/#/fr" target="_blank">easygov.swiss →</a></div></div>
+        <div class="ressource-item"><div class="ressource-badge">🏦</div><div><h4>AFC — Contributions fédérales</h4><p>Impôt fédéral direct, TVA.</p><a href="https://www.estv.admin.ch/estv/fr/accueil.html" target="_blank">estv.admin.ch →</a></div></div>
+        <div class="ressource-item"><div class="ressource-badge">🏢</div><div><h4>République de Genève</h4><p>Création, fiscalité, aides.</p><a href="https://www.ge.ch/dossier/entreprises" target="_blank">ge.ch/entreprises →</a></div></div>
+        <div class="ressource-item"><div class="ressource-badge">📗</div><div><h4>Canton de Vaud</h4><p>Fiscalité vaudoise, aides.</p><a href="https://www.vd.ch/entreprises" target="_blank">vd.ch/entreprises →</a></div></div>
+        <div class="ressource-item"><div class="ressource-badge">👷</div><div><h4>SECO — Portail PME</h4><p>Guides pratiques.</p><a href="https://www.kmu.admin.ch/kmu/fr/home.html" target="_blank">kmu.admin.ch →</a></div></div>
+        <div class="ressource-item"><div class="ressource-badge">🛂</div><div><h4>SEM — Permis de travail</h4><p>Permis G, B, C, L.</p><a href="https://www.sem.admin.ch/sem/fr/home.html" target="_blank">sem.admin.ch →</a></div></div>
+        <div class="ressource-item"><div class="ressource-badge">🛡</div><div><h4>OFAS — Assurances sociales</h4><p>AVS, AI, prévoyance.</p><a href="https://www.bsv.admin.ch/bsv/fr/home.html" target="_blank">bsv.admin.ch →</a></div></div>
       </div>
     </section>
 
     <section id="faq" class="faq-section">
       <h2 class="section-title">Questions Fréquentes</h2>
       <p class="section-subtitle">Les réponses aux questions les plus posées par les entrepreneurs de la région.</p>
-
-      <div class="faq-item">
-        <div class="faq-question">Quel est le taux d'imposition effectif des entreprises à Genève ?</div>
-        <div class="faq-answer">Depuis la RFFA, le taux effectif d'imposition sur le bénéfice à Genève tourne autour de 13.99% (fédéral + cantonal + communal). Consultez l'<a href="https://www.ge.ch/dossier/vos-impots" target="_blank">Administration fiscale genevoise</a>.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Combien faut-il pour créer une Sàrl ?</div>
-        <div class="faq-answer">Le capital minimum est de CHF 20'000 (entièrement libéré). Comptez CHF 1'500 à 3'000 de frais. Procédure via <a href="https://www.easygov.swiss/easygov/#/fr" target="_blank">EasyGov</a>.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Comment fonctionne l'imposition des frontaliers à Genève ?</div>
-        <div class="faq-answer">Les frontaliers sont imposés à la source en Suisse. Genève rétrocède 3.5% à la France. Détails sur <a href="https://www.ge.ch/imposition-du-teletravail-personnes-frontalieres" target="_blank">ge.ch</a>.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">À partir de quand suis-je assujetti à la TVA ?</div>
-        <div class="faq-answer">L'assujettissement est obligatoire dès CHF 100'000 de CA annuel. Taux normal : 8.1%. Infos sur le <a href="https://www.estv.admin.ch/estv/fr/accueil/taxe-sur-la-valeur-ajoutee.html" target="_blank">portail TVA de l'AFC</a>.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Quelle différence entre le 2ème et le 3ème pilier ?</div>
-        <div class="faq-answer">Le 2ème pilier (LPP) est obligatoire. Le 3ème pilier A est volontaire avec déduction fiscale (max CHF 7'258/an en 2026). Détails sur <a href="https://www.bsv.admin.ch/bsv/fr/home/assurances-sociales/bv.html" target="_blank">l'OFAS</a>.</div>
-      </div>
+      <div class="faq-item"><div class="faq-question">Quel est le taux d'imposition effectif des entreprises à Genève ?</div><div class="faq-answer">Depuis la RFFA, le taux effectif d'imposition sur le bénéfice à Genève tourne autour de 13.99% (fédéral + cantonal + communal). Consultez l'<a href="https://www.ge.ch/dossier/vos-impots" target="_blank">Administration fiscale genevoise</a>.</div></div>
+      <div class="faq-item"><div class="faq-question">Combien faut-il pour créer une Sàrl ?</div><div class="faq-answer">Le capital minimum est de CHF 20'000 (entièrement libéré). Comptez CHF 1'500 à 3'000 de frais. Procédure via <a href="https://www.easygov.swiss/easygov/#/fr" target="_blank">EasyGov</a>.</div></div>
+      <div class="faq-item"><div class="faq-question">Comment fonctionne l'imposition des frontaliers à Genève ?</div><div class="faq-answer">Les frontaliers sont imposés à la source en Suisse. Genève rétrocède 3.5% à la France. Détails sur <a href="https://www.ge.ch/imposition-du-teletravail-personnes-frontalieres" target="_blank">ge.ch</a>.</div></div>
+      <div class="faq-item"><div class="faq-question">À partir de quand suis-je assujetti à la TVA ?</div><div class="faq-answer">L'assujettissement est obligatoire dès CHF 100'000 de CA annuel. Taux normal : 8.1%. Infos sur le <a href="https://www.estv.admin.ch/estv/fr/accueil/taxe-sur-la-valeur-ajoutee.html" target="_blank">portail TVA de l'AFC</a>.</div></div>
+      <div class="faq-item"><div class="faq-question">Quelle différence entre le 2ème et le 3ème pilier ?</div><div class="faq-answer">Le 2ème pilier (LPP) est obligatoire. Le 3ème pilier A est volontaire avec déduction fiscale (max CHF 7'258/an en 2026). Détails sur <a href="https://www.bsv.admin.ch/bsv/fr/home/assurances-sociales/bv.html" target="_blank">l'OFAS</a>.</div></div>
     </section>
 
     <section id="diagnostic" class="diagnostic-section">
@@ -960,7 +762,7 @@
       <p>Myrtille analyse votre situation en 3 minutes et vous oriente vers les bonnes ressources et les bons experts du bassin lémanique.</p>
       <button class="glass-myrtille-cta glass-myrtille-cta-dark" onclick="openMyrtille()">
         <span class="berry">🫐</span>
-        Discuter avec Myrtille
+        Discutez en avec Myrtille 🫐
         <span class="pulse-dot"></span>
       </button>
       <div class="diagnostic-steps">
@@ -974,9 +776,7 @@
   <footer class="footer">
     <div class="footer-brand">Suisse Fiduciaire</div>
     <p>Hub de ressources juridiques et fiscales pour le bassin lémanique.<br>Informations à titre indicatif. Consultez un professionnel pour votre situation.</p>
-    <p style="margin-top: 16px;">
-      <a href="https://suisse-fiduciaire.com">Accueil</a> · <a href="#fiches">Fiches</a> · <a href="#ressources">Ressources</a> · <a href="#faq">FAQ</a> · <a href="javascript:void(0)" onclick="openMyrtille()">Diagnostic</a> · <a href="confidentialite.html">Confidentialité</a>
-    </p>
+    <p style="margin-top: 16px;"><a href="https://suisse-fiduciaire.com">Accueil</a> · <a href="#fiches">Fiches</a> · <a href="#ressources">Ressources</a> · <a href="#faq">FAQ</a> · <a href="javascript:void(0)" onclick="openMyrtille()">Diagnostic</a> · <a href="confidentialite.html">Confidentialité</a></p>
     <p style="margin-top: 20px; font-size: 0.75rem;">© 2026 Suisse Fiduciaire — Leman Digital Asset</p>
   </footer>
 
@@ -989,68 +789,16 @@
         if (!isOpen) item.classList.add('open');
       });
     });
-
     const API_URL = 'https://web-production-4e8e0.up.railway.app';
     const HUB = 'suisse-fiduciaire';
     const CONSENT_KEY = 'myrtille_consent_' + HUB;
     let sessionId = 'session_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
-
-    function checkConsent() {
-      return localStorage.getItem(CONSENT_KEY) === 'accepted';
-    }
-
-    function acceptConsent() {
-      localStorage.setItem(CONSENT_KEY, 'accepted');
-      document.getElementById('myrtilleConsent').classList.add('hidden');
-      document.getElementById('myrtilleChatContent').classList.add('visible');
-      document.getElementById('myrtilleInput').focus();
-    }
-
-    function openMyrtille() {
-      document.getElementById('myrtilleOverlay').classList.add('open');
-      if (checkConsent()) {
-        document.getElementById('myrtilleConsent').classList.add('hidden');
-        document.getElementById('myrtilleChatContent').classList.add('visible');
-        document.getElementById('myrtilleInput').focus();
-      }
-    }
-
-    function closeMyrtille(event) {
-      if (!event || event.target === document.getElementById('myrtilleOverlay')) {
-        document.getElementById('myrtilleOverlay').classList.remove('open');
-      }
-    }
-
+    function checkConsent() { return localStorage.getItem(CONSENT_KEY) === 'accepted'; }
+    function acceptConsent() { localStorage.setItem(CONSENT_KEY, 'accepted'); document.getElementById('myrtilleConsent').classList.add('hidden'); document.getElementById('myrtilleChatContent').classList.add('visible'); document.getElementById('myrtilleInput').focus(); }
+    function openMyrtille() { document.getElementById('myrtilleOverlay').classList.add('open'); if (checkConsent()) { document.getElementById('myrtilleConsent').classList.add('hidden'); document.getElementById('myrtilleChatContent').classList.add('visible'); document.getElementById('myrtilleInput').focus(); } }
+    function closeMyrtille(event) { if (!event || event.target === document.getElementById('myrtilleOverlay')) { document.getElementById('myrtilleOverlay').classList.remove('open'); } }
     function handleKeyPress(event) { if (event.key === 'Enter') sendMessage(); }
-
-    async function sendMessage() {
-      const input = document.getElementById('myrtilleInput');
-      const message = input.value.trim();
-      if (!message) return;
-      const messagesDiv = document.getElementById('myrtilleMessages');
-      const sendBtn = document.getElementById('sendBtn');
-      messagesDiv.innerHTML += `<div class="msg user">${escapeHtml(message)}</div>`;
-      input.value = '';
-      sendBtn.disabled = true;
-      messagesDiv.innerHTML += `<div class="msg typing" id="typingIndicator"><div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>`;
-      messagesDiv.scrollTop = messagesDiv.scrollHeight;
-      try {
-        const response = await fetch(`${API_URL}/api/chat`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message, session_id: sessionId, hub: HUB })
-        });
-        const data = await response.json();
-        document.getElementById('typingIndicator')?.remove();
-        messagesDiv.innerHTML += `<div class="msg assistant">${formatResponse(data.response)}</div>`;
-      } catch (error) {
-        document.getElementById('typingIndicator')?.remove();
-        messagesDiv.innerHTML += `<div class="msg assistant">Désolé, une erreur s'est produite. Veuillez réessayer.</div>`;
-      }
-      sendBtn.disabled = false;
-      messagesDiv.scrollTop = messagesDiv.scrollHeight;
-    }
-
+    async function sendMessage() { const input = document.getElementById('myrtilleInput'); const message = input.value.trim(); if (!message) return; const messagesDiv = document.getElementById('myrtilleMessages'); const sendBtn = document.getElementById('sendBtn'); messagesDiv.innerHTML += '<div class="msg user">' + escapeHtml(message) + '</div>'; input.value = ''; sendBtn.disabled = true; messagesDiv.innerHTML += '<div class="msg typing" id="typingIndicator"><div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>'; messagesDiv.scrollTop = messagesDiv.scrollHeight; try { const response = await fetch(API_URL + '/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message, session_id: sessionId, hub: HUB }) }); const data = await response.json(); document.getElementById('typingIndicator')?.remove(); messagesDiv.innerHTML += '<div class="msg assistant">' + formatResponse(data.response) + '</div>'; } catch (error) { document.getElementById('typingIndicator')?.remove(); messagesDiv.innerHTML += '<div class="msg assistant">Désolé, une erreur s\'est produite. Veuillez réessayer.</div>'; } sendBtn.disabled = false; messagesDiv.scrollTop = messagesDiv.scrollHeight; }
     function escapeHtml(text) { const div = document.createElement('div'); div.textContent = text; return div.innerHTML; }
     function formatResponse(text) { return text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>'); }
   </script>
