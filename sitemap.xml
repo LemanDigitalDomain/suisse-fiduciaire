@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://suisse-fiduciaire.com/</loc></url>
-  <url><loc>https://suisse-fiduciaire.com/creer-sarl-suisse-2026.html</loc></url>
-  <url><loc>https://suisse-fiduciaire.com/comparatif-ri-sarl-sa-2026.html</loc></url>
-  <url><loc>https://suisse-fiduciaire.com/tva-suisse-pme-2026.html</loc></url>
-  <url><loc>https://suisse-fiduciaire.com/confidentielle.html</loc></url>
+  <url>
+    <loc>https://suisse-fiduciaire.com/</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://suisse-fiduciaire.com/creer-sarl-suisse-2026.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://suisse-fiduciaire.com/comparatif-ri-sarl-sa-2026.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://suisse-fiduciaire.com/tva-suisse-pme-2026.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://suisse-fiduciaire.com/confidentielle.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
-```
-
-### Pour finance-leman.ch
-
-**robots.txt**
-```
-User-agent: *
-Allow: /
-
-Sitemap: https://finance-leman.ch/sitemap.xml
